@@ -14,9 +14,9 @@ ___
 
 ___
 
-<div align="center" ><img src="" width="500"></div>
+<div align="center" ><img src="https://media.giphy.com/media/SA3QadCAeqcyPoJxSq/giphy.gif" width="500"></div>
 
-- [**Link do vídeo completo sobre o projeto**]()
+- [**Link do vídeo completo sobre o projeto**](https://www.youtube.com/watch?v=ymQWNhHw8Mo)
 
 ___
 
@@ -25,10 +25,10 @@ ___
 O projeto **dtmoney** é o 2º projeto realizado em aula do bootcamp **Ignite da trilha ReactJS da Rocketseat** em que treinamos todos os conceitos básicos de ReactJS como **componentes e suas propriedades, contextos, hooks, models, styled.components, formulários, chamadas de api, requisições e respostas, javascript, typescript, css, importações, exportações de funções e variáveis, estilizações, dentre outras técnicas de desenvolvimento web.**
 
 * Página Inicial:
+  <img src="https://i.imgur.com/o7kREHU.png" width="800"> 
  
-  <img src="" width="800"> 
  * Cadastro:
-  <img src="" width="800">
+  <img src="https://i.imgur.com/a64iYHS.png" width="800">
 
 ___
 ## :interrobang: Motivo
