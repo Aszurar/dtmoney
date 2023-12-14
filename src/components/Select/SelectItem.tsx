@@ -1,0 +1,23 @@
+import * as Select from '@radix-ui/react-select'
+import { FiCheck } from 'react-icons/fi'
+
+type SelectItemProps = Select.SelectItemProps & {
+  text: string
+}
+
+export function SelectItem({ text, ...rest }: SelectItemProps) {
+  return (
+    <Select.Item
+      className={`flex items-center justify-between px-5 py-4 font-semibold 
+      text-gray-700 focus:ring-2 focus:ring-purple-200 
+      data-[highlighted]:bg-purple-50
+      `}
+      {...rest}
+    >
+      <Select.ItemText>{text}</Select.ItemText>
+      <Select.ItemIndicator>
+        <FiCheck className="text-base text-purple-400" />
+      </Select.ItemIndicator>
+    </Select.Item>
+  )
+}
