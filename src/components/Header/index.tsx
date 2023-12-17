@@ -26,14 +26,14 @@ export function Header() {
           <Dialog.Portal>
             <Dialog.Overlay className="fixed inset-0 bg-gray-50">
               <Dialog.Content
-                className={`border-0.5 fixed left-1/2 top-1/2 mx-auto my-0 flex 
-                 max-w-xl -translate-x-1/2 -translate-y-1/2 flex-col gap-4
-                 rounded-lg border-purple-500 bg-white px-12 py-16 `}
+                className={`fixed left-1/2 top-1/2 mx-auto my-0 flex max-w-xl 
+                 -translate-x-1/2 -translate-y-1/2 flex-col gap-4 rounded-lg
+                 border-0.5 border-purple-500 bg-white px-12 py-16 `}
               >
                 <Dialog.Close asChild className={`absolute right-2 top-2`}>
                   <Button variant="ghost" className="group">
                     <FiX
-                      className={`duration-400 transition-all 
+                      className={`transition-all duration-400 
                       group-hover:text-purple-400`}
                     />
                   </Button>
