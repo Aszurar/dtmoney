@@ -10,8 +10,12 @@ export default {
 
       borderWidth: {
         0.5: '0.125rem',
+        0.375: '0.0938rem',
       },
 
+      inset: {
+        18: '4.5rem',
+      },
       width: {
         highlightcard: '22rem',
       },
@@ -41,6 +45,7 @@ export default {
           600: '#3F1F99',
         },
         green: {
+          75: 'rgba(18, 164, 84, 0.5)',
           400: '#33CC95',
           500: '#2db986',
         },
@@ -50,6 +55,7 @@ export default {
           700: '#363F5F',
         },
         red: {
+          75: 'rgba(232, 63, 91, 0.5)',
           500: '#E52E4D',
         },
         background: {
