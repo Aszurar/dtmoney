@@ -2,16 +2,20 @@ import { ComponentProps } from 'react'
 import { VariantProps, tv } from 'tailwind-variants'
 
 const button = tv({
-  base: `rounded-md  px-8 py-3 font-semibold text-white shadow-md 
-  drop-shadow-md  transition-all duration-400
-  hover:cursor-pointer hover:shadow-lg hover:drop-shadow-xl`,
+  base: `rounded-md px-8 py-3 font-semibold text-white  transition-all 
+  duration-400 bg-transparent cursor-pointer
+   `,
   variants: {
     variant: {
-      primary: 'bg-white text-purple-400 hover:bg-purple-400 hover:text-white',
-      secondary: 'py-5 bg-green-500 hover:bg-green-400',
+      primary: `bg-white text-purple-400 shadow-md drop-shadow-md border-2 
+      border-transparent
+        hover:bg-purple-400 hover:text-white hover:border-2 border-white
+        hover:shadow-lg hover:drop-shadow-xl`,
+      secondary: `py-5 bg-green-500 shadow-md drop-shadow-md 
+        hover:bg-green-400 hover:shadow-lg hover:drop-shadow-xl`,
       ghost: `flex text-2xl px-0 py-0 text-gray-500 h-10 w-10 items-center 
-      justify-center bg-transparent shadow-none
-      hover:bg-zinc-100 hover:shadow-none hover:drop-shadow-none`,
+      justify-center
+      hover:bg-zinc-200`,
     },
   },
   defaultVariants: {
