@@ -21,6 +21,21 @@
         }
     }
 
+    ::-webkit-outer-spin-button,
+    ::-webkit-inner-spin-button {
+        display: none;
+        -webkit-appearance: none;
+        margin: 0;
+
+        -webkit-appearance: textfield;
+        -moz-appearance: textfield;
+        appearance: textfield;
+    }
+
+    ::-webkit-calendar-picker-indicator {
+        display: none !important;
+    }
+    
   ::-webkit-scrollbar {
         width: 0.375rem;
       }
