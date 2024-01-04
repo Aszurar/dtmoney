@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
@@ -40,9 +41,9 @@ export default {
       colors: {
         purple: {
           300: '#885AFF',
-          400: '#6933FF',
-          500: '#5429CC',
-          600: '#3F1F99',
+          400: '#6933FF', // purple-300
+          500: '#5429CC', // purple-400
+          600: '#3F1F99', // purple-500
         },
         green: {
           75: 'rgba(18, 164, 84, 0.5)',
@@ -50,18 +51,19 @@ export default {
           500: '#2db986',
         },
         gray: {
+          25: 'rgba(255, 255, 255, 0.4)',
           50: 'rgba(0, 0, 0, 0.5)',
-          500: '#969CB2',
-          700: '#363F5F',
+          500: '#969CB2', // gray-400
+          700: '#363F5F', // gray-600 or white
         },
         red: {
           75: 'rgba(232, 63, 91, 0.5)',
           500: '#E52E4D',
         },
         background: {
-          primary: '#F0F2F5',
-          secondary: '#E7E9EE',
-          tertiary: '#D7D7D7',
+          primary: '#F0F2F5', // zinc-900
+          secondary: '#E7E9EE', // zinc-800
+          tertiary: '#D7D7D7', // zinc-500
         },
       },
     },
