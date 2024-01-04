@@ -5,13 +5,17 @@ import { VariantProps, tv } from 'tailwind-variants'
 
 const select = tv({
   slots: {
-    trigger: `group flex w-full cursor-pointer items-center justify-between 
-    rounded-lg border border-zinc-300 bg-background-secondary px-6 py-5 
-    shadow-sm outline-none transition-all duration-400
-    focus:border-purple-300 focus:ring-2 focus:ring-purple-300 hover:bg-white
-    data-[state=open]:bg-white data-[placeholder]:text-gray-500 
+    trigger: `group flex w-full px-6 py-5 cursor-pointer items-center 
+      justify-between rounded-md border border-background-tertiary 
+      bg-background-secondary text-gray-700 shadow-sm outline-none transition-all 
+      duration-400 focus:border-purple-300 focus:ring-2 focus:ring-purple-300 
+      hover:bg-white data-[state=open]:bg-white data-[placeholder]:text-gray-500 
+      dark:text-white dark:bg-zinc-800 dark:border-zinc-500 
+      dark:hover:bg-zinc-950 dark:data-[state=open]:bg-zinc-950 
+      dark:focus:border-purple-200  dark:focus:ring-purple-200
     `,
-    icon: `text-xl text-gray-500 group-hover:text-purple-300`,
+    icon: `text-xl text-gray-500 group-hover:text-purple-300
+      dark:text-gray-400 dark:group-hover:text-purple-200`,
   },
   variants: {
     variant: {
@@ -20,8 +24,8 @@ const select = tv({
         icon: '',
       },
       filled: {
-        trigger: 'bg-white',
-        icon: 'text-purple-300',
+        trigger: 'bg-white dark:bg-zinc-950',
+        icon: 'text-purple-300 dark:text-purple-200',
       },
     },
   },
@@ -47,12 +51,12 @@ export function Select({
   return (
     <SelectPrimitive.Root {...rest}>
       <SelectPrimitive.Trigger id="select" className={trigger()}>
-        <SelectPrimitive.Value
-          placeholder={placeholder}
-          className="text-gray-700"
-        />
+        <SelectPrimitive.Value placeholder={placeholder} />
 
-        <SelectPrimitive.Icon className="text-gray-500 group-data-[state=open]:text-purple-400">
+        <SelectPrimitive.Icon
+          className={`text-gray-500 group-data-[state=open]:text-purple-400
+            dark:text-gray-400 dark:group-data-[state=open]:text-purple-300`}
+        >
           <FiChevronDown className={icon()} />
         </SelectPrimitive.Icon>
       </SelectPrimitive.Trigger>
@@ -63,8 +67,9 @@ export function Select({
           position="popper"
           sideOffset={2}
           className={`z-10 w-[--radix-select-trigger-width] overflow-hidden 
-          rounded-md border border-purple-300 bg-white shadow-md 
-          ring-2 ring-purple-300 drop-shadow-md`}
+            rounded-md border border-purple-300 bg-white shadow-md ring-2 
+          ring-purple-300 drop-shadow-md 
+          dark:bg-zinc-950`}
         >
           <SelectPrimitive.Viewport>{children}</SelectPrimitive.Viewport>
         </SelectPrimitive.Content>
