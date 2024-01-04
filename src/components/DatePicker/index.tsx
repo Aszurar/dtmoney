@@ -10,19 +10,22 @@ import { SELECT_DATE_DEFAULT } from '../Header'
 
 const datePicker = tv({
   slots: {
-    button: `group w-full cursor-pointer border border-background-tertiary px-6 py-5
-    bg-background-secondary text-left text-gray-700 font-medium flex rounded-md 
-    items-center justify-between transition-all duration-400 
-    focus-within:border-purple-300 focus-within:ring-2
-    focus-within:ring-purple-300 hover:bg-white 
+    button: `group w-full px-6 py-5 cursor-pointer border 
+      border-background-tertiary bg-background-secondary text-left text-gray-700 
+      font-medium flex rounded-md items-center justify-between transition-all 
+      duration-400 focus-within:border-purple-300 focus-within:ring-2
+      focus-within:ring-purple-300 hover:bg-white 
+      dark:bg-zinc-800 dark:border-zinc-500 dark:text-white dark:hover:bg-zinc-950
+      dark:focus-within:border-purple-200 focus-within:ring-purple-200
     `,
-    icon: `ml-auto text-xl text-gray-500 group-hover:text-purple-300`,
+    icon: `ml-auto text-xl text-gray-500 group-hover:text-purple-300
+      dark:text-gray-400 dark:group-hover:text-purple-200`,
   },
   variants: {
     variant: {
       true: {
-        button: 'bg-white',
-        icon: 'text-purple-300',
+        button: 'bg-white dark:bg-zinc-950',
+        icon: 'text-purple-300 dark:text-purple-300',
       },
       false: {
         button: '',
@@ -69,13 +72,17 @@ export function DatePicker({
     { locale: ptBR },
   )
 
-  let footer = <p className="text-gray-500">Por favor, selecione uma data.</p>
+  let footer = (
+    <p className="text-gray-500 dark:text-gray-400">
+      Por favor, selecione uma data.
+    </p>
+  )
 
   if (dateFormattedToCalendarPreview) {
     footer = (
-      <p className="text-gray-700">
+      <p className="text-gray-700 dark:text-white">
         Você selecionou{' '}
-        <span className="font-medium text-purple-500">
+        <span className="font-medium text-purple-500 dark:text-purple-200">
           {dateFormattedToCalendarPreview}
         </span>
         .
@@ -105,8 +112,9 @@ export function DatePicker({
 
       {isShowCalendar && (
         <div
-          className={`bottom-18 absolute right-0 z-10 rounded-md border-2 
-        border-purple-300 bg-white shadow-md drop-shadow-md`}
+          className={`absolute bottom-18 right-0 z-10 rounded-md border-2 
+        border-purple-300 bg-white shadow-md drop-shadow-md 
+        dark:border-purple-200 dark:bg-zinc-950`}
         >
           <style>{css}</style>
           <DayPicker
