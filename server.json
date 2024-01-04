@@ -1,0 +1,19 @@
+{ 
+  "transactions": [{
+    "id": 1,
+    "price": 100,
+    "type": "income",
+    "category": "Alimentação",
+    "description": "Torda de brigadeiro",
+    "createdAt": "2023-12-29T16:49:58.801Z"
+  },
+  {
+    "id": 2,
+    "createdAt": "2023-12-31T16:49:58.801Z",
+    "price": 30,
+    "description": "Capa de celular",
+    "category": "Compras",
+    "type": "outcome"
+  }
+]
+}
