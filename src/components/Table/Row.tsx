@@ -6,7 +6,7 @@ const row = tv({
   variants: {
     variant: {
       head: 'bg-transparent pb-5',
-      body: 'bg-white my-2 py-5 drop-shadow-lg rounded-md border-collapse overflow-hidden',
+      body: 'bg-white dark:bg-zinc-900 my-2 py-5 drop-shadow-lg rounded-md border-collapse overflow-hidden',
     },
   },
 })

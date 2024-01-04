@@ -1,9 +1,12 @@
-import { ComponentProps } from "react"
+import { ComponentProps } from 'react'
 
-type HeadProps = ComponentProps<"th">
+type HeadProps = ComponentProps<'th'>
 
 export function Head(props: HeadProps) {
   return (
-    <th className="font-normal text-gray-500 text-start" {...props} />
+    <th
+      className="text-start font-normal text-gray-500 dark:text-gray-400"
+      {...props}
+    />
   )
 }
