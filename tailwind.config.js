@@ -28,14 +28,36 @@ export default {
 
       maxWidth: {
         app: '70rem',
+        40: '10rem',
+        68: '17rem',
+        76: '19rem',
+        80: '20rem',
+      },
+      maxHeight: {
+        108: '27rem',
+        112: '28rem',
+        120: '30rem',
+      },
+      minWidth: {
+        highlightcard: '260px',
+      },
+
+      borderRadius: {
+        switch: '5.625rem',
       },
 
       gridTemplateColumns: {
-        table: '4fr 2fr 2fr 1fr',
+        table: '4fr 2fr 2fr 1fr 0.5fr',
       },
 
       transitionDuration: {
         400: '400ms',
+      },
+
+      screens: {
+        'phone-md': '360px',
+        'phone-lg': '390px',
+        'phone-xl': '400px',
       },
 
       colors: {
@@ -58,7 +80,7 @@ export default {
         },
         red: {
           75: 'rgba(232, 63, 91, 0.5)',
-          500: '#E52E4D',
+          500: '#E52E4D', // red-400
         },
         background: {
           primary: '#F0F2F5', // zinc-900
@@ -68,5 +90,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar')],
 }
