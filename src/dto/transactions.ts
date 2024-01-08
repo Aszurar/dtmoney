@@ -1,3 +1,5 @@
+import { CategoriesType } from './categories'
+
 enum TRANSACTION_TYPE {
   income = 'income',
   outcome = 'outcome',
@@ -9,9 +11,14 @@ export interface ITransactions {
   id: string
   price: number
   type: TransactionType
-  category: string
+  category: CategoriesType
   description: string
-  createdAt: string
+  date: Date
+}
+
+export type PeriodBalanceProps = {
+  initial: Date
+  final: Date
 }
 
 export type TransactionsState = {
@@ -19,6 +26,9 @@ export type TransactionsState = {
   incomeTotal: number
   outcomeTotal: number
   balance: number
+  lastIncomeTransaction?: ITransactions
+  lastOutcomeTransaction?: ITransactions
+  periodBalance?: PeriodBalanceProps
 }
 
 const TRANSACTIONS_REDUCER_INITIAL_STATE = {
@@ -28,4 +38,19 @@ const TRANSACTIONS_REDUCER_INITIAL_STATE = {
   balance: 0,
 }
 
-export { TRANSACTION_TYPE, TRANSACTIONS_REDUCER_INITIAL_STATE }
+const SELECT_DATE_DEFAULT = new Date()
+
+const TRANSACTION_DEFAULT_FIELDS_VALUES = {
+  description: '',
+  price: 0,
+  type: undefined,
+  category: undefined,
+  date: SELECT_DATE_DEFAULT,
+} as const
+
+export {
+  TRANSACTION_TYPE,
+  SELECT_DATE_DEFAULT,
+  TRANSACTION_DEFAULT_FIELDS_VALUES,
+  TRANSACTIONS_REDUCER_INITIAL_STATE,
+}
