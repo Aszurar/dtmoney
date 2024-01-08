@@ -7,6 +7,9 @@ enum ActionTypes {
   OUTCOME_TOTAL = 'OUTCOME_TOTAL',
   BALANCE = 'BALANCE',
   LOAD_TRANSACTIONS = 'LOAD_TRANSACTIONS',
+  GET_LAST_INCOME_TRANSACTION = 'GET_LAST_INCOME_TRANSACTION',
+  GET_LAST_OUTCOME_TRANSACTION = 'GET_LAST_OUTCOME_TRANSACTION',
+  GET_PERIOD_BALANCE = 'GET_PERIOD_BALANCE',
 }
 
 export type IActions =
@@ -33,6 +36,9 @@ export type IActions =
         | ActionTypes.INCOME_TOTAL
         | ActionTypes.OUTCOME_TOTAL
         | ActionTypes.BALANCE
+        | ActionTypes.GET_LAST_INCOME_TRANSACTION
+        | ActionTypes.GET_LAST_OUTCOME_TRANSACTION
+        | ActionTypes.GET_PERIOD_BALANCE
     }
 
 function loadTransactions(transactions: ITransactions[]) {
@@ -80,6 +86,24 @@ function calculateBalance() {
   } satisfies IActions
 }
 
+function getLastIncomeTransaction() {
+  return {
+    type: ActionTypes.GET_LAST_INCOME_TRANSACTION,
+  } satisfies IActions
+}
+
+function getLastOutcomeTransaction() {
+  return {
+    type: ActionTypes.GET_LAST_OUTCOME_TRANSACTION,
+  } satisfies IActions
+}
+
+function getPeriodBalance() {
+  return {
+    type: ActionTypes.GET_PERIOD_BALANCE,
+  } satisfies IActions
+}
+
 export {
   ActionTypes,
   calculateBalance,
@@ -88,4 +112,7 @@ export {
   removeTransaction,
   calculateIncomeTotal,
   calculateOutcomeTotal,
+  getLastIncomeTransaction,
+  getLastOutcomeTransaction,
+  getPeriodBalance,
 }
