@@ -7,6 +7,8 @@ const CATEGORIES = [
   'Trabalho',
   'Transporte',
   'Outros',
-]
+] as const
+
+export type CategoriesType = (typeof CATEGORIES)[number]
 
 export { CATEGORIES }
