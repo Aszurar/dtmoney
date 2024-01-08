@@ -1,19 +1,28 @@
-{ 
-  "transactions": [{
-    "id": 1,
-    "price": 100,
-    "type": "income",
-    "category": "Alimentação",
-    "description": "Torda de brigadeiro",
-    "createdAt": "2023-12-29T16:49:58.801Z"
-  },
-  {
-    "id": 2,
-    "createdAt": "2023-12-31T16:49:58.801Z",
-    "price": 30,
-    "description": "Capa de celular",
-    "category": "Compras",
-    "type": "outcome"
-  }
-]
+{
+  "transactions": [
+    {
+      "description": "teste",
+      "price": 12,
+      "type": "income",
+      "category": "Contas",
+      "date": "2024-01-01T03:00:00.000Z",
+      "id": "a8f16a46-20e5-4d05-ac96-afb58bf7642b"
+    },
+    {
+      "description": "trteste2",
+      "price": 2323,
+      "type": "outcome",
+      "category": "Contas",
+      "date": "2024-01-08T00:50:00.737Z",
+      "id": "e7dfdf19-254b-4104-b75f-38424fab97d4"
+    },
+    {
+      "description": "teste3",
+      "price": 323,
+      "type": "income",
+      "category": "Trabalho",
+      "date": "2024-02-07T03:00:00.000Z",
+      "id": "0c925bbb-dfaa-477a-9227-6a6b336e66af"
+    }
+  ]
 }
