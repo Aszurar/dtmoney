@@ -5,8 +5,7 @@ import { ptBR } from 'date-fns/locale'
 import { DayPicker } from 'react-day-picker'
 import { FiCalendar } from 'react-icons/fi'
 import { VariantProps, tv } from 'tailwind-variants'
-
-import { SELECT_DATE_DEFAULT } from '../Header'
+import { SELECT_DATE_DEFAULT } from '../../dto/transactions'
 
 const datePicker = tv({
   slots: {

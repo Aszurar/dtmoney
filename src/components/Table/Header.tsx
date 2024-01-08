@@ -1,9 +1,7 @@
-import { ComponentProps } from "react"
+import { ComponentProps } from 'react'
 
-type HeaderProps = ComponentProps<"thead">
+type HeaderProps = ComponentProps<'thead'>
 
 export function Header(props: HeaderProps) {
-  return (
-    <thead {...props} />
-  )
+  return <thead {...props} />
 }

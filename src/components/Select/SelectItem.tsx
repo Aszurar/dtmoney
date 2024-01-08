@@ -1,5 +1,5 @@
-import * as Select from '@radix-ui/react-select'
 import { FiCheck } from 'react-icons/fi'
+import * as Select from '@radix-ui/react-select'
 
 type SelectItemProps = Select.SelectItemProps & {
   text: string

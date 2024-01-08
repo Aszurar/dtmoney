@@ -1,4 +1,4 @@
 import { Root } from './Root'
-import { Icon } from './icon'
+import { Icon } from './Icon'
 
 export { Icon, Root }

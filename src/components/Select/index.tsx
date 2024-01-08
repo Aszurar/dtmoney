@@ -1,7 +1,7 @@
-import * as SelectPrimitive from '@radix-ui/react-select'
 import { ReactNode } from 'react'
 import { FiChevronDown } from 'react-icons/fi'
 import { VariantProps, tv } from 'tailwind-variants'
+import * as SelectPrimitive from '@radix-ui/react-select'
 
 const select = tv({
   slots: {

@@ -27,13 +27,14 @@ export function ThemeSwitch() {
     <button aria-label={label} onClick={handleToggleTheme} className="self-end">
       <div
         data-theme={isDarkMode}
-        className={`flex h-10 w-20 items-center rounded-[90px] bg-gray-25 
-          p-2 shadow drop-shadow-sm focus:shadow-purple-200 
-          data-[theme=true]:justify-end`}
+        className={`rounded-switch phone-lg:h-10 phone-lg:w-20 phone-lg:p-2 flex 
+          h-8 w-16 items-center bg-gray-25 p-1 shadow drop-shadow-sm 
+          focus:shadow-purple-200 data-[theme=true]:justify-end`}
       >
         <motion.div
-          className={`flex h-8 w-8 cursor-pointer items-center justify-center 
-            rounded-full bg-white text-purple-300 dark:bg-zinc-900 `}
+          className={`phone-lg:h-8 phone-lg:w-8 flex h-7 w-7 cursor-pointer 
+            items-center justify-center rounded-full bg-white
+            text-purple-300 dark:bg-zinc-900 `}
           layout
           transition={SPRING_ANIMATION}
         >

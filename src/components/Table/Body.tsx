@@ -1,7 +1,21 @@
-import { ComponentProps } from 'react'
+import { ComponentProps, forwardRef, useImperativeHandle, useRef } from 'react'
 
 type BodyProps = ComponentProps<'tbody'>
 
-export function Body(props: BodyProps) {
-  return <tbody className=" block max-h-80 overflow-y-auto " {...props} />
-}
+export const Body = forwardRef<HTMLTableSectionElement, BodyProps>(
+  ({ ...props }, outerRef) => {
+    const innerRef = useRef<HTMLTableSectionElement>(null)
+    useImperativeHandle(outerRef, () => innerRef.current!, [])
+
+    return (
+      <tbody
+        className={`phone-lg:max-h-120 phone-md:max-h-80 phone-xl:max-h-134 
+          block max-h-64 overflow-y-auto`}
+        {...props}
+        ref={innerRef}
+      />
+    )
+  },
+)
+
+Body.displayName = 'Body'
