@@ -24,7 +24,7 @@ const select = tv({
         icon: '',
       },
       filled: {
-        trigger: 'bg-white dark:bg-zinc-950',
+        trigger: 'bg-white font-medium dark:bg-zinc-950',
         icon: 'text-purple-300 dark:text-purple-200',
       },
     },
@@ -54,8 +54,8 @@ export function Select({
         <SelectPrimitive.Value placeholder={placeholder} />
 
         <SelectPrimitive.Icon
-          className={`text-gray-500 group-data-[state=open]:text-purple-400
-            dark:text-gray-400 dark:group-data-[state=open]:text-purple-300`}
+          className={`text-gray-500 group-data-[state=open]:text-purple-300
+            dark:text-gray-400 dark:group-data-[state=open]:text-purple-200`}
         >
           <FiChevronDown className={icon()} />
         </SelectPrimitive.Icon>
@@ -69,7 +69,7 @@ export function Select({
           className={`z-10 w-[--radix-select-trigger-width] overflow-hidden 
             rounded-md border border-purple-300 bg-white shadow-md ring-2 
           ring-purple-300 drop-shadow-md 
-          dark:bg-zinc-950`}
+          dark:bg-zinc-950 dark:ring-purple-200`}
         >
           <SelectPrimitive.Viewport>{children}</SelectPrimitive.Viewport>
         </SelectPrimitive.Content>

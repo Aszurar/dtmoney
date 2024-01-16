@@ -8,15 +8,15 @@ type SelectItemProps = Select.SelectItemProps & {
 export function SelectItem({ text, ...rest }: SelectItemProps) {
   return (
     <Select.Item
-      className={`flex items-center justify-between px-5 py-4 font-semibold 
-      text-gray-700 focus:ring-2 focus:ring-purple-200 
-      data-[highlighted]:bg-purple-50
+      className={`flex items-center justify-between px-5 py-4 font-medium 
+      text-gray-700 data-[highlighted]:bg-purple-50 focus:ring-2 
+      focus:ring-purple-200
       dark:text-white dark:data-[highlighted]:bg-zinc-800`}
       {...rest}
     >
       <Select.ItemText>{text}</Select.ItemText>
       <Select.ItemIndicator>
-        <FiCheck className="text-base text-purple-300" />
+        <FiCheck className="text-base text-purple-300 dark:text-purple-200" />
       </Select.ItemIndicator>
     </Select.Item>
   )
