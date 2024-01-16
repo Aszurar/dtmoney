@@ -2,21 +2,38 @@ import { FiTrash } from 'react-icons/fi'
 
 import * as Table from '../../Table'
 import { Button } from '../../Button'
+import { Loading } from '../../Loading'
 import { useTransactions } from '../../../hook/useTransactions'
+import { useResponsiveness } from '../../../hook/useResponsiveness'
 import { dateFormatter, priceFormatter } from '../../../utils/formatter'
 
-type TableRows = {
-  isMobile: boolean
-}
+export function TableRows() {
+  const { isMobile } = useResponsiveness()
 
-export function TableRows({ isMobile }: TableRows) {
-  const { transactions, handleRemoveTransactionById } = useTransactions()
+  const {
+    transactions,
+    handleRemoveTransactionById,
+    isDeleteTransactionLoading,
+  } = useTransactions()
 
   return transactions.map((transaction) => {
     const dataFormatted = dateFormatter.format(new Date(transaction.date))
     const priceFormatted = priceFormatter.format(transaction.price)
     const priceFormattedWithSignalOrNot =
       transaction.type === 'outcome' ? `- ${priceFormatted}` : priceFormatted
+
+    const isLoadingIcon =
+      isDeleteTransactionLoading.id === transaction.id &&
+      isDeleteTransactionLoading.value
+
+    const buttonIcon = isLoadingIcon ? (
+      <Loading
+        className="border-gray-500 border-top-4-table 
+        dark:border-top-4-table-dark"
+      />
+    ) : (
+      <FiTrash className="text-lg " />
+    )
 
     return (
       <Table.Row key={transaction.id} variant="body">
@@ -29,10 +46,11 @@ export function TableRows({ isMobile }: TableRows) {
               <Table.Data className="">
                 <Button
                   variant="ghost"
+                  disabled={isLoadingIcon}
                   className="h-8 w-8"
                   onClick={() => handleRemoveTransactionById(transaction.id)}
                 >
-                  <FiTrash className="text-lg " />
+                  {buttonIcon}
                 </Button>
               </Table.Data>
             </div>
@@ -59,10 +77,11 @@ export function TableRows({ isMobile }: TableRows) {
             <Table.Data>
               <Button
                 variant="ghost"
+                disabled={isLoadingIcon}
                 className="h-8 w-8"
                 onClick={() => handleRemoveTransactionById(transaction.id)}
               >
-                <FiTrash className="text-lg " />
+                {buttonIcon}
               </Button>
             </Table.Data>
           </>

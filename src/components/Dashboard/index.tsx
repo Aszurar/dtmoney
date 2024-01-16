@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { useAutoAnimate } from '@formkit/auto-animate/react'
 
 import * as Table from '../Table'
@@ -9,9 +8,6 @@ import { useTransactions } from '../../hook/useTransactions'
 
 export function Dashboard() {
   const [parent] = useAutoAnimate()
-
-  const [currentBrowserWidth, setCurrentBrowserWidth] = useState(0)
-  const isMobile = currentBrowserWidth < 640
 
   const {
     transactions,
@@ -25,24 +21,12 @@ export function Dashboard() {
 
   const transactionsTotal = transactions.length
 
-  function onUpdateCurrentBrowserWidth() {
-    setCurrentBrowserWidth(window.innerWidth)
-  }
-
-  useEffect(() => {
-    window.addEventListener('resize', onUpdateCurrentBrowserWidth)
-    return () => {
-      window.removeEventListener('resize', onUpdateCurrentBrowserWidth)
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
   return (
     <main className="h-dashboard bg-background-primary px-6 dark:bg-zinc-950">
       <div className="mx-auto max-w-app">
         <section
-          className={`phone-lg:-mt-16 -mt-12 flex gap-5 overflow-x-scroll px-1 
-            pb-1 sm:gap-8 sm:px-0 sm:pb-0`}
+          className={`-mt-12 flex gap-5 overflow-x-scroll px-1 
+            pb-1 sm:gap-8 sm:px-0 sm:pb-0 phone-lg:-mt-16`}
         >
           <HighLightCard
             value={incomeTotal}
@@ -65,14 +49,11 @@ export function Dashboard() {
           <Table.Root>
             <Table.Header>
               <Table.Row variant="head">
-                <TableHead
-                  isMobile={isMobile}
-                  transactionsTotal={transactionsTotal}
-                />
+                <TableHead transactionsTotal={transactionsTotal} />
               </Table.Row>
             </Table.Header>
             <Table.Body ref={parent}>
-              <TableRows isMobile={isMobile} />
+              <TableRows />
             </Table.Body>
           </Table.Root>
         </section>
