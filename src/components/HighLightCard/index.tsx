@@ -57,16 +57,16 @@ export function HighLightCard({
     income: {
       title: 'Entradas',
       lastDateInitial: 'Última entrada dia ',
-      icon: <FiArrowUpCircle className={icon()} />,
+      icon: <FiArrowDownCircle className={icon()} />,
     },
     outcome: {
       title: 'Saídas',
       lastDateInitial: 'Última saída dia ',
-      icon: <FiArrowDownCircle className={icon()} />,
+      icon: <FiArrowUpCircle className={icon()} />,
     },
     total: {
       title: 'Total',
-      lastDateInitial: ' ',
+      lastDateInitial: '',
       icon: <FiDollarSign className={icon()} />,
     },
   }
