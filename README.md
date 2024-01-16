@@ -119,7 +119,7 @@
 <div align="center">
   <h3><a href="https://www.figma.com/file/7LmOydy7HWvNRbmTr1Tkkf/dtmoney-Ignite?type=design&node-id=0-1&mode=design&t=1SGukE0ct1Da1lzu-0">dtmoney</a></h3>
 
-  [![Design](https://i.imgur.com/UBNFr4w.png)](https://www.figma.com/file/7LmOydy7HWvNRbmTr1Tkkf/dtmoney-Ignite?type=design&node-id=0-1&mode=design&t=1SGukE0ct1Da1lzu-0)
+  [![Design](https://i.imgur.com/KtwG6Zs.png)](https://www.figma.com/file/7LmOydy7HWvNRbmTr1Tkkf/dtmoney-Ignite?type=design&node-id=0-1&mode=design&t=1SGukE0ct1Da1lzu-0)
 </div>
 
 ---
