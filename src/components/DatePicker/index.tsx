@@ -2,10 +2,11 @@ import 'react-day-picker/dist/style.css'
 import { useState } from 'react'
 import { format } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
-import { DayPicker } from 'react-day-picker'
+import { DayPicker, Styles } from 'react-day-picker'
 import { FiCalendar } from 'react-icons/fi'
 import { VariantProps, tv } from 'tailwind-variants'
 import { SELECT_DATE_DEFAULT } from '../../dto/transactions'
+import { useTheme } from '../../hook/useTheme'
 
 const datePicker = tv({
   slots: {
@@ -18,13 +19,13 @@ const datePicker = tv({
       dark:focus-within:border-purple-200 focus-within:ring-purple-200
     `,
     icon: `ml-auto text-xl text-gray-500 group-hover:text-purple-300
-      dark:text-gray-400 dark:group-hover:text-purple-200`,
+      dark:text-gray-400 dark:group-hover:text-gray-400`,
   },
   variants: {
     variant: {
       true: {
         button: 'bg-white dark:bg-zinc-950',
-        icon: 'text-purple-300 dark:text-purple-300',
+        icon: 'text-purple-300 dark:text-purple-200',
       },
       false: {
         button: '',
@@ -43,33 +44,135 @@ type DateProps = VariantProps<typeof datePicker> & {
   isCloseCalendar?: boolean
 }
 
-const css = `
-.day-selected:not([disabled]) { 
-  font-weight: bold; 
-  border: 2px solid #885AFF;
-  color: #885AFF;
-  font-weight: 600;
+const WHITE = '#FFFFFF'
+const PURPLE = {
+  300: '#885AFF',
+  200: '#E9D5FF',
 }
-.today {
-  color: #ffffff !important;
-  background-color: #885AFF;
-  font-weight: 600;
+const GRAY = {
+  700: '#363F5F',
 }
-`
+const ZINC = {
+  700: '#3F3F46',
+  200: '#E4E4E7',
+}
+
+const CSSThemeStyles = {
+  light: {
+    daySelected: {
+      borderColor: PURPLE[300],
+      color: PURPLE[300],
+      hover: {
+        backgroundColor: ZINC[200],
+        color: GRAY[700],
+      },
+    },
+    today: {
+      backgroundColor: PURPLE[300],
+      color: WHITE,
+      hover: {
+        color: GRAY[700],
+        borderColor: PURPLE[300],
+      },
+    },
+  },
+
+  dark: {
+    daySelected: {
+      borderColor: PURPLE[200],
+      color: PURPLE[200],
+      hover: {
+        backgroundColor: ZINC[700],
+        color: WHITE,
+      },
+    },
+    today: {
+      backgroundColor: PURPLE[200],
+      color: GRAY[700],
+      hover: {
+        color: WHITE,
+        borderColor: PURPLE[200],
+      },
+    },
+  },
+}
+
+const datePickerThemeStyles = {
+  light: {
+    caption_label: {
+      color: PURPLE[300],
+      textTransform: 'capitalize',
+    },
+    months: {
+      justifyContent: 'end',
+    },
+    nav_icon: {
+      color: PURPLE[300],
+    },
+    day: {
+      color: GRAY[700],
+    },
+  },
+  dark: {
+    caption_label: {
+      color: PURPLE[200],
+      textTransform: 'capitalize',
+    },
+    months: {
+      justifyContent: 'end',
+    },
+    nav_icon: {
+      color: PURPLE[200],
+    },
+    day: {
+      color: WHITE,
+    },
+  },
+}
 
 export function DatePicker({
   variant,
   selectedDate,
   onDateChange,
 }: Readonly<DateProps>) {
+  const { isDarkMode } = useTheme()
   const [isShowCalendar, setIsShowCalendar] = useState(false)
   const { icon, button } = datePicker({ variant: variant ?? isShowCalendar })
+
+  const theme = isDarkMode ? 'dark' : 'light'
 
   const dateFormattedToCalendarPreview = format(
     selectedDate,
     "dd 'de' MMMM 'de' yyyy",
     { locale: ptBR },
   )
+
+  const datePickerTheme = datePickerThemeStyles[theme] as Styles
+  const CSSTheme = CSSThemeStyles[theme]
+
+  const css = `
+  .day-selected:not([disabled]) { 
+    font-weight: bold; 
+    border: 2px solid ${CSSTheme.daySelected.borderColor};
+    color: ${CSSTheme.daySelected.color};
+    font-weight: 600;
+  }
+  .today {
+    color: ${CSSTheme.today.color} !important;
+    background-color: ${CSSTheme.today.backgroundColor};
+    font-weight: 600;
+  }
+  .today:hover {
+    color: ${CSSTheme.today.hover.color} !important;
+    border: 2px solid ${CSSTheme.today.hover.borderColor};
+  }
+
+  .rdp-button:hover:not([disabled]):not(.rdp-day_selected):hover {
+    background-color: ${CSSTheme.daySelected.hover.backgroundColor};
+    color: ${CSSTheme.daySelected.hover.color};
+    font-weight: 600;
+  }
+  `
 
   let footer = (
     <p className="text-gray-500 dark:text-gray-400">
@@ -128,21 +231,7 @@ export function DatePicker({
               today: 'today',
               selected: 'day-selected',
             }}
-            styles={{
-              caption_label: {
-                color: '#885AFF',
-                textTransform: 'capitalize',
-              },
-              months: {
-                justifyContent: 'end',
-              },
-              nav_icon: {
-                color: '#885AFF',
-              },
-              day: {
-                color: '#363F5F',
-              },
-            }}
+            styles={datePickerTheme}
           />
         </div>
       )}
