@@ -2,27 +2,43 @@
   "transactions": [
     {
       "description": "teste",
-      "price": 12,
-      "type": "income",
-      "category": "Contas",
-      "date": "2024-01-01T03:00:00.000Z",
-      "id": "a8f16a46-20e5-4d05-ac96-afb58bf7642b"
-    },
-    {
-      "description": "trteste2",
-      "price": 2323,
+      "price": 20,
       "type": "outcome",
-      "category": "Contas",
-      "date": "2024-01-08T00:50:00.737Z",
-      "id": "e7dfdf19-254b-4104-b75f-38424fab97d4"
+      "category": "Lazer",
+      "date": "2024-01-14T02:34:35.278Z",
+      "id": "68d2d15d-0ee5-4c6a-8906-187740e2c012"
     },
     {
-      "description": "teste3",
-      "price": 323,
+      "description": "teste",
+      "price": 20,
+      "type": "outcome",
+      "category": "Lazer",
+      "date": "2024-01-14T02:34:35.278Z",
+      "id": "68d2d15d-0ee5-4c6a-8906-187740e2c0121"
+    },
+    {
+      "description": "teste",
+      "price": 20,
+      "type": "outcome",
+      "category": "Lazer",
+      "date": "2024-01-14T02:34:35.278Z",
+      "id": "68d2d15d-0ee5-4c6a-8906-187740e2c0123"
+    },
+    {
+      "description": "teste",
+      "price": 20,
+      "type": "outcome",
+      "category": "Lazer",
+      "date": "2024-01-14T02:34:35.278Z",
+      "id": "68d2d15d-0ee5-4c6a-8906-187740e2c015"
+    },
+    {
+      "description": "Conta",
+      "price": 20,
       "type": "income",
-      "category": "Trabalho",
-      "date": "2024-02-07T03:00:00.000Z",
-      "id": "0c925bbb-dfaa-477a-9227-6a6b336e66af"
+      "category": "Contas",
+      "date": "2024-01-14T19:27:34.776Z",
+      "id": "ad92cda0-d17e-4a17-bf30-aa788c9351b8"
     }
   ]
 }
