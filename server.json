@@ -1,44 +1,60 @@
 {
   "transactions": [
     {
-      "description": "teste",
-      "price": 20,
+      "description": "Conta de Gás",
+      "price": 110,
       "type": "outcome",
-      "category": "Lazer",
-      "date": "2024-01-14T02:34:35.278Z",
-      "id": "68d2d15d-0ee5-4c6a-8906-187740e2c012"
-    },
-    {
-      "description": "teste",
-      "price": 20,
-      "type": "outcome",
-      "category": "Lazer",
-      "date": "2024-01-14T02:34:35.278Z",
-      "id": "68d2d15d-0ee5-4c6a-8906-187740e2c0121"
-    },
-    {
-      "description": "teste",
-      "price": 20,
-      "type": "outcome",
-      "category": "Lazer",
-      "date": "2024-01-14T02:34:35.278Z",
-      "id": "68d2d15d-0ee5-4c6a-8906-187740e2c0123"
-    },
-    {
-      "description": "teste",
-      "price": 20,
-      "type": "outcome",
-      "category": "Lazer",
-      "date": "2024-01-14T02:34:35.278Z",
-      "id": "68d2d15d-0ee5-4c6a-8906-187740e2c015"
-    },
-    {
-      "description": "Conta",
-      "price": 20,
-      "type": "income",
       "category": "Contas",
-      "date": "2024-01-14T19:27:34.776Z",
-      "id": "ad92cda0-d17e-4a17-bf30-aa788c9351b8"
+      "date": "2024-01-16T22:52:12.231Z",
+      "id": "f787441b-f99d-4908-b406-f78b799a0bae"
+    },
+    {
+      "description": "Trabalho de meio período",
+      "price": 1100,
+      "type": "income",
+      "category": "Trabalho",
+      "date": "2024-01-12T03:00:00.000Z",
+      "id": "8690a721-a8af-46f6-960c-d7b37efea845"
+    },
+    {
+      "description": "Vendas",
+      "price": 2220,
+      "type": "income",
+      "category": "Outros",
+      "date": "2023-12-13T03:00:00.000Z",
+      "id": "05c906b0-dec3-436a-b99c-928bf6c61bfc"
+    },
+    {
+      "description": "Conta de Energia",
+      "price": 330,
+      "type": "outcome",
+      "category": "Contas",
+      "date": "2023-11-08T03:00:00.000Z",
+      "id": "203259f8-0ef4-425b-8904-1f528c427bff"
+    },
+    {
+      "description": "Impost de Importação",
+      "price": 110,
+      "type": "outcome",
+      "category": "Outros",
+      "date": "2023-10-25T03:00:00.000Z",
+      "id": "b2d5362a-af05-4abb-b38f-c6bb0ed996a3"
+    },
+    {
+      "description": "Passeio",
+      "price": 220,
+      "type": "outcome",
+      "category": "Lazer",
+      "date": "2023-08-30T03:00:00.000Z",
+      "id": "292f8e42-c997-441e-bfab-ef3f920325ef"
+    },
+    {
+      "description": "Torta de aniversário",
+      "price": 200,
+      "type": "outcome",
+      "category": "Alimentação",
+      "date": "2023-09-23T03:00:00.000Z",
+      "id": "b69b353c-d9d2-4b9a-a551-3a5d17151ccd"
     }
   ]
 }
