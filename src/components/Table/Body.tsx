@@ -9,8 +9,11 @@ export const Body = forwardRef<HTMLTableSectionElement, BodyProps>(
 
     return (
       <tbody
-        className={`phone-lg:max-h-120 phone-md:max-h-80 phone-xl:max-h-134 
-          block max-h-64 overflow-y-auto`}
+        className={`block max-h-64
+          overflow-y-auto phone-md:max-h-80
+          phone-lg:max-h-120 phone-xl:max-h-134 iPhone-se:max-h-64 
+          notebook-sm:max-h-25 notebook-sm-2:max-h-50 notebook-md:max-h-75 
+          notebook-lg:max-h-100 notebook-xl:max-h-125`}
         {...props}
         ref={innerRef}
       />

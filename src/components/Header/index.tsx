@@ -23,7 +23,7 @@ export function Header() {
     <header className="h-header bg-purple-400 px-6 pt-8">
       <div className="mx-auto flex max-w-app items-start justify-between">
         <Logo />
-        <div className="phone-lg:gap-8 flex flex-col gap-3">
+        <div className="flex flex-col gap-3">
           <Dialog.Root open={isNewTransactionModalOpen}>
             <Dialog.Trigger asChild>
               <Button onClick={handleOpenModal}>Nova transação</Button>
