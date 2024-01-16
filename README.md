@@ -104,8 +104,8 @@
 - **Modal de Registro de Transações**
 
   <div align="center" >
-      <img src="" width="400">_<img src="" width="400">
-      <img src="" width="400">_<img src="" width="400">
+      <img src="https://i.imgur.com/fMEwxCz.png" width="400" alt="Formulário no tema light">_<img src="https://i.imgur.com/SiwGjx4.png" width="400" alt="Formulário preenchido no tema light">
+      <img src="https://i.imgur.com/F32IPzF.png" width="400"  alt="Formulário no tema dark">_<img src="https://i.imgur.com/XxtVgkC.png" width="400" alt="Formulário preenchido no tema dark">
   </div>
 
 ---
