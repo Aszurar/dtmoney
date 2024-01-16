@@ -134,8 +134,8 @@
 - **Responsividade**
 
 <div align="center" >
-      <img src="https://i.imgur.com/a9jCeRM.png" alt="Tela inicial no modo responsivo e tema light" width="270">_<img src="https://i.imgur.com/1PYAfbo.png" width="270" alt="Formulário no tema light em modo responsivo">
-      <img src="https://i.imgur.com/I4oLSJg.png" alt="Tela inicial no modo responsivo e tema dark" width="270">_<img src="https://i.imgur.com/1gV9SgG.png" width="270" alt="Formulário no tema dark em modo responsivo">
+      <img src="https://i.imgur.com/a9jCeRM.png" alt="Tela inicial no modo responsivo e tema light" width="280">_<img src="https://i.imgur.com/1PYAfbo.png" width="280" alt="Formulário no tema light em modo responsivo">
+      <img src="https://i.imgur.com/I4oLSJg.png" alt="Tela inicial no modo responsivo e tema dark" width="280">_<img src="https://i.imgur.com/1gV9SgG.png" width="280" alt="Formulário no tema dark em modo responsivo">
 </div>
 
 ---
