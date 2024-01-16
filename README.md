@@ -7,6 +7,7 @@
 ## dtmoney
 
 - O projeto dtmoney é uma plataforma que cadastra transações, calcular o saldo, total de entradas e saídas, lista as transações e indica o período de tempo em que elas ocorreram.
+- Nesse projeto, na branch chamada desenvolvimento(dev), os dados serão salvos e consumidos a partir de um json-server com o intuito de simular uma API. Mas na branch de produção(master), os dados serão salvos e consumidos a partir do localStorage do navegador.
 - O site foi publicado com CI/CD por meio da plataforma **[Netlify](https://www.netlify.com/)**.
 - Acesse e teste o projeto em: **<https://dtmoney-aszurar.netlify.app//>**
 
@@ -50,7 +51,7 @@
 ## :information_source: Sobre
 
 - O projeto **dtomeny** pode ser um projeto simples, mas que foi abordado conceitos importantes para o desenvolvimento de web apps com React.
-- Esse projeto foi reformulado e refeito com tecnologias atuais a partir de um projeto do módulo da trilha de 2021 de React da Rocketseat. Assim, temos algumas adições e incrementos como a criação do **tema escuro**, Remoção de transações, gerenciamento de Estados pelo useReducer, dentre outros.
+- Esse projeto foi reformulado e refeito com tecnologias atuais a partir de um projeto do módulo da trilha de 2021 de React da Rocketseat. Assim, temos algumas adições e incrementos como o uso do json-server para simular uma API, a criação do **tema escuro**, Remoção de transações, gerenciamento de Estados pelo useReducer,  dentre outros.
 - Usamos **[React](https://react.dev)** com **[TypeScript](https://www.typescriptlang.org/)** como principais tecnologias.
 - A animação da listagem é feita com a lib **[AutoAnimate](https://auto-animate.formkit.com/)**.
 - A acessibilidade foi levada em consideração, com o uso da lib **[axe-core](https://www.npmjs.com/package/@axe-core/react)** para testes e correções de acessibilidade assim como leitor de tela ChromeVox e o uso do **[Radix UI](https://www.radix-ui.com/)** para componentes acessíveis como Modais e Tooltips.
@@ -93,13 +94,16 @@
 ### O que foi aprendido de novo?
 
   1. **Integração com Api** com **axios**;
-  2. Input de valor monetário personalizado com **CurrencyFormat**;
-  3. Input de data personalizado com **React DayPicker**;
-  4. Formatação de datas e valores monetários com **Date FNS** e **Intl**;
-  5. Uso do método **reducer** para calcular o total de entradas, saídas e o saldo;
-  6. Maior **aprofundamento na responsividade** com tailwindcss;
-  7. **Contexto de responsividade** para modificações mais profundas no visual responsivo;
-  8. Maior **aprofundamento no uso do useReducer** para o gerenciamento de estado da aplicação;
+  2. Uso do json-server para simular uma API;
+     1. Isso ta implementando na branch de desenvolvimento(dev)
+     2. Na branch de produção, master, os dados são salvos e consumidos a partir do localStorage do navegador;
+  3. Input de valor monetário personalizado com **CurrencyFormat**;
+  4. Input de data personalizado com **React DayPicker**;
+  5. Formatação de datas e valores monetários com **Date FNS** e **Intl**;
+  6. Uso do método **reducer** para calcular o total de entradas, saídas e o saldo;
+  7. Maior **aprofundamento na responsividade** com tailwindcss;
+  8. **Contexto de responsividade** para modificações mais profundas no visual responsivo;
+  9.  Maior **aprofundamento no uso do useReducer** para o gerenciamento de estado da aplicação;
   
 - **Modal de Registro de Transações**
 
@@ -208,6 +212,13 @@
 
   ```bash
     yarn dev
+  ```
+
+- Para executar o json-server, basta executar na raiz do projeto:
+  - É necessário mudar para a branch de desenvolvimento(dev)
+
+  ```bash
+    yarn dev:server
   ```
 
 ---
