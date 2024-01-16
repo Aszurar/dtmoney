@@ -75,7 +75,7 @@
 ### Funcionalidades novas em relação ao projeto original
 
   1. Remoção de transações;
-  2. Cadastro da data de Entrada e Saída;
+  2. Cadastro da data de Entrada e Saída com **React DayPicker**;
   3. Indicação da última data de Entrada e Saída;
   4. Indicação do período de tempo em que as transações ocorreram;
   5. Formatação de valores com **CurrencyFormat**, **Intl** e **Date FNS**;
