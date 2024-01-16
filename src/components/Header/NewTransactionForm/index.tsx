@@ -23,6 +23,7 @@ import {
 } from '../../../dto/transactions'
 import { Button } from '../../Button'
 import { useTransactions } from '../../../hook/useTransactions'
+import { Loading } from '../../Loading'
 
 const newTransactionFormValidation = zod.object({
   description: zod.string().min(3, 'É necessário uma descrição válida!'),
@@ -50,21 +51,16 @@ type NewTransactionFormProps = {
 }
 
 // TODO
-// Criar tópico sobre o bug no período das datas e sobre a forma de capturar a largura da tela para mudar o design
-// Aplicar melhoria de acessibilidade
 // Criar Readme
 // Criar branch que usa o localStorage para armazenar as transações e realizar as operações: branch prod
 // json server ficará somente na branch de dev
 // Anotar sobre o uso do .reducer que fiz para calcular o total de entradas e saídas.
 // Anotar toda lógica do useReducer feito aqui
-// Anotar a validação feita aqui e sobre como mandar mensagem de erro de select e botões de selecionar
-// Anotar sobre esse formulário
-// anotar sobre forma de saber a largura da tela em responsividade e como criar novas classes de responsividade
 
 export function NewTransactionForm({
   onCloseModal,
 }: Readonly<NewTransactionFormProps>) {
-  const { handleAddNewTransaction } = useTransactions()
+  const { handleAddNewTransaction, isAddTransactionLoading } = useTransactions()
 
   const {
     register,
@@ -110,6 +106,10 @@ export function NewTransactionForm({
 
   const datePickerVariant = date !== SELECT_DATE_DEFAULT
 
+  function handleMonetaryChange(value: number) {
+    setValue('price', value)
+  }
+
   function handleSelectType(type: TransactionType) {
     setValue('type', type)
   }
@@ -123,8 +123,6 @@ export function NewTransactionForm({
   }
 
   function handleCreateNewTransaction(data: FormDataProps) {
-    console.log(data)
-
     const newTransaction: ITransactions = {
       ...data,
       id: crypto.randomUUID(),
@@ -134,6 +132,15 @@ export function NewTransactionForm({
     reset()
     onCloseModal()
   }
+
+  const submitButtonContent = isAddTransactionLoading ? (
+    <Loading
+      className={`border-white border-top-4-register
+    dark:border-zinc-900 dark:border-top-4-register`}
+    />
+  ) : (
+    'Cadastrar'
+  )
 
   return (
     <form
@@ -150,14 +157,11 @@ export function NewTransactionForm({
         </Input.Root>
         <Input.ErrorMessage message={errors.description?.message} />
       </div>
+
       <div>
         <Input.Root variant={inputPriceVariant}>
           <Input.Icon variant={inputPriceVariant} icon={FiDollarSign} />
-          <Input.Control
-            type="number"
-            placeholder="0,00"
-            {...register('price', { valueAsNumber: true })}
-          />
+          <Input.Monetary value={price} onChange={handleMonetaryChange} />
         </Input.Root>
         <Input.ErrorMessage message={errors.price?.message} />
       </div>
@@ -169,7 +173,7 @@ export function NewTransactionForm({
             onClick={() => handleSelectType('income')}
           >
             <TransactionTypeButton.Icon
-              icon={FiArrowUpCircle}
+              icon={FiArrowDownCircle}
               variant={incomeTransactionTypeVariant}
             />
             Entrada
@@ -180,7 +184,7 @@ export function NewTransactionForm({
             onClick={() => handleSelectType('outcome')}
           >
             <TransactionTypeButton.Icon
-              icon={FiArrowDownCircle}
+              icon={FiArrowUpCircle}
               variant={outcomeTransactionTypeVariant}
             />
             Saída
@@ -211,8 +215,13 @@ export function NewTransactionForm({
         <Input.ErrorMessage message={errors.date?.message} />
       </div>
 
-      <Button type="submit" variant="secondary" className="w-full">
-        Cadastrar
+      <Button
+        type="submit"
+        variant="secondary"
+        className="w-full"
+        disabled={isAddTransactionLoading}
+      >
+        {submitButtonContent}
       </Button>
     </form>
   )
