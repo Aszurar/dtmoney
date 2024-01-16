@@ -4,6 +4,7 @@ import React, {
   useEffect,
   useMemo,
   useReducer,
+  useState,
 } from 'react'
 import {
   ITransactions,
@@ -33,11 +34,17 @@ type PeriodBalanceFormattedProps = {
   dates: PeriodBalanceProps
 }
 
+type IsDeleteTransactionLoadingProps = {
+  id: string
+  value: boolean
+}
 interface TransactionsContextProps {
   transactions: ITransactions[]
   incomeTotal: number
   outcomeTotal: number
   balance: number
+  isAddTransactionLoading: boolean
+  isDeleteTransactionLoading: IsDeleteTransactionLoadingProps
   periodBalanceFormatted?: PeriodBalanceFormattedProps
   lastIncomeTransactionDateFormatted: string
   lastOutcomeTransactionDateFormatted: string
@@ -49,11 +56,22 @@ interface TransactionsProviderProps {
   children: React.ReactNode
 }
 
+const INITIAL_IS_DELETE_TRANSACTION_LOADING_VALUE = {
+  id: '',
+  value: false,
+}
+
 const TransactionsContext = createContext({} as TransactionsContextProps)
 
 function TransactionsProvider({
   children,
 }: Readonly<TransactionsProviderProps>) {
+  const [isDeleteTransactionLoading, setIsDeleteTransactionLoading] =
+    useState<IsDeleteTransactionLoadingProps>(
+      INITIAL_IS_DELETE_TRANSACTION_LOADING_VALUE,
+    )
+  const [isAddTransactionLoading, setIsAddTransactionLoading] = useState(false)
+
   const [transactionsState, dispatch] = useReducer(
     transactionsReducer,
     TRANSACTIONS_REDUCER_INITIAL_STATE,
@@ -132,13 +150,17 @@ function TransactionsProvider({
   }
 
   const addNewTransaction = useCallback(async (transaction: ITransactions) => {
+    setIsAddTransactionLoading(true)
     await api.post('/transactions', transaction)
     loadTransactionsData()
+    setIsAddTransactionLoading(false)
   }, [])
 
   const removeTransactionById = useCallback(async (id: string) => {
+    setIsDeleteTransactionLoading({ id, value: true })
     await api.delete(`/transactions/${id}`)
     loadTransactionsData()
+    setIsDeleteTransactionLoading({ id, value: false })
   }, [])
 
   useEffect(() => {
@@ -161,6 +183,8 @@ function TransactionsProvider({
       transactions,
       outcomeTotal,
       periodBalanceFormatted,
+      isAddTransactionLoading,
+      isDeleteTransactionLoading,
       lastIncomeTransactionDateFormatted,
       lastOutcomeTransactionDateFormatted,
       handleAddNewTransaction: addNewTransaction,
@@ -174,6 +198,8 @@ function TransactionsProvider({
       addNewTransaction,
       removeTransactionById,
       periodBalanceFormatted,
+      isAddTransactionLoading,
+      isDeleteTransactionLoading,
       lastIncomeTransactionDateFormatted,
       lastOutcomeTransactionDateFormatted,
     ],
