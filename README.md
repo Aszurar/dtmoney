@@ -104,8 +104,8 @@
 - **Modal de Registro de Transações**
 
   <div align="center" >
-      <img src="https://i.imgur.com/fMEwxCz.png" width="400" alt="Formulário no tema light">_<img src="https://i.imgur.com/SiwGjx4.png" width="400" alt="Formulário preenchido no tema light">
-      <img src="https://i.imgur.com/F32IPzF.png" width="400"  alt="Formulário no tema dark">_<img src="https://i.imgur.com/XxtVgkC.png" width="400" alt="Formulário preenchido no tema dark">
+      <img src="https://i.imgur.com/fMEwxCz.png" width="1000" alt="Formulário no tema light"><img src="https://i.imgur.com/SiwGjx4.png" width="1000" alt="Formulário preenchido no tema light">
+      <img src="https://i.imgur.com/F32IPzF.png" width="1000"  alt="Formulário no tema dark"><img src="https://i.imgur.com/XxtVgkC.png" width="1000" alt="Formulário preenchido no tema dark">
   </div>
 
 ---
@@ -134,9 +134,8 @@
 - **Responsividade**
 
 <div align="center" >
-      <img src="" width="270">
-      <img src="" width="270">
-      <img src="" width="270">
+      <img src="https://i.imgur.com/a9jCeRM.png" alt="Tela inicial no modo responsivo e tema light" width="270">_<img src="https://i.imgur.com/1PYAfbo.png" width="270" alt="Formulário no tema light em modo responsivo">
+      <img src="https://i.imgur.com/I4oLSJg.png" alt="Tela inicial no modo responsivo e tema dark" width="270">_<img src="https://i.imgur.com/1gV9SgG.png" width="270" alt="Formulário no tema dark em modo responsivo">
 </div>
 
 ---
@@ -177,7 +176,7 @@
 - Além disso, podemos customizar o próprio endereço do site, adicionar ferramentas dentre outras funcionalidades facilmente.
 
 <div align="center">
-   <img src="https://i.imgur.com/95151dy.png" width="1000" alt="">
+   <img src="https://i.imgur.com/95151dy.png" width="1000" alt="design do projeto">
 </div>
 
 ---
