@@ -1,3 +1,5 @@
+import plugin from 'tailwindcss/plugin'
+
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: 'class',
@@ -22,8 +24,8 @@ export default {
       },
 
       height: {
-        header: '25vh',
-        dashboard: 'calc(100vh - 25vh - 3.5rem)',
+        header: '13.25rem',
+        dashboard: 'calc(100vh - 13.25rem - 3.5rem)',
       },
 
       maxWidth: {
@@ -34,9 +36,15 @@ export default {
         80: '20rem',
       },
       maxHeight: {
+        25: '6.25rem',
+        50: '12.5rem',
+        75: '18.75rem',
+        100: '25rem',
         108: '27rem',
         112: '28rem',
         120: '30rem',
+        125: '31.25rem',
+        134: '33.5rem',
       },
       minWidth: {
         highlightcard: '260px',
@@ -58,6 +66,24 @@ export default {
         'phone-md': '360px',
         'phone-lg': '390px',
         'phone-xl': '400px',
+        'iPhone-se': {
+          raw: '(min-width: 375px) and (max-height: 667px)',
+        },
+        'notebook-sm': {
+          raw: '(min-width: 440px) and (min-height: 668px)',
+        },
+        'notebook-sm-2': {
+          raw: '(min-width: 440px) and (min-height: 700px)',
+        },
+        'notebook-md': {
+          raw: '(min-width: 440px) and (min-height: 800px)',
+        },
+        'notebook-lg': {
+          raw: '(min-width: 440px) and (min-height: 900px)',
+        },
+        'notebook-xl': {
+          raw: '(min-width: 440px) and (min-height: 1024px)',
+        },
       },
 
       colors: {
@@ -90,5 +116,20 @@ export default {
       },
     },
   },
-  plugins: [require('tailwind-scrollbar')],
+  plugins: [
+    require('tailwind-scrollbar'),
+    plugin(({ addUtilities }) => {
+      addUtilities({
+        '.border-top-4-table-dark': {
+          'border-top': '4px solid #18181b',
+        },
+        '.border-top-4-table': {
+          'border-top': '4px solid #fff',
+        },
+        '.border-top-4-register': {
+          'border-top': '4px solid #33CC95',
+        },
+      })
+    }),
+  ],
 }
