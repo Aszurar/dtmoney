@@ -50,7 +50,7 @@ function loadTransactions(transactions: ITransactions[]) {
   } satisfies IActions
 }
 
-function addNewTransaction(transaction: ITransactions) {
+function addTransaction(transaction: ITransactions) {
   return {
     type: ActionTypes.ADD_TRANSACTION,
     payload: {
@@ -59,7 +59,7 @@ function addNewTransaction(transaction: ITransactions) {
   } satisfies IActions
 }
 
-function removeTransaction(id: string) {
+function removeTransactionById(id: string) {
   return {
     type: ActionTypes.REMOVE_TRANSACTION,
     payload: {
@@ -108,8 +108,8 @@ export {
   ActionTypes,
   calculateBalance,
   loadTransactions,
-  addNewTransaction,
-  removeTransaction,
+  addTransaction,
+  removeTransactionById,
   calculateIncomeTotal,
   calculateOutcomeTotal,
   getLastIncomeTransaction,

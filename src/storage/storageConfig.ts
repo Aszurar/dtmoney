@@ -1,3 +1,4 @@
-const DT_MONEY_THEME = '@dt-money:theme-1.0.0'
+const TRANSACTIONS_COLLECTION = '@dtmoney:transactions-1.0.0'
+const APP_THEME = '@dtmoney:theme-1.0.0'
 
-export { DT_MONEY_THEME }
+export { TRANSACTIONS_COLLECTION, APP_THEME }
