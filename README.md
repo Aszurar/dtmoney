@@ -80,16 +80,17 @@
   3. Indicação da última data de Entrada e Saída;
   4. Indicação do período de tempo em que as transações ocorreram;
   5. Formatação de valores com **CurrencyFormat**, **Intl** e **Date FNS**;
-  6. **Troca de temas** com **tailwindcss** respeitando o tema escolho no sistema operacional do usuário;
-  7. Apesar do projeto original ser disponibilizado no Figma, ele não está no padrão de design ensinado pela própria Rocketseat por ser um pouco antigo, então:
+  6. **Melhoria de Performance**: Uso do **memo** para memorizar as linhas da tabela e não renderizar novamente a cada remoção de transação;
+  7. **Troca de temas** com **tailwindcss** respeitando o tema escolho no sistema operacional do usuário;
+  8. Apesar do projeto original ser disponibilizado no Figma, ele não está no padrão de design ensinado pela própria Rocketseat por ser um pouco antigo, então:
      1. Reconstrução do protótipo no Figma aplicando o padrão de design ensinado pela Rocketseat;
      2. Construção do protótipo com tema escuro
-  8. **Animação** na listagem de tarefas com **AutoAnimate**;
-  9. **Componentes acessíveis** com **Radix UI** e integração com **tailwindcss** como ToolTip e Modal;
-  10. **Uso do useReducer** e **Context API** do React para o gerenciamento de estado da aplicação em conjunto com a divisão da lógica de **actions** e **reducers** para o gerenciamento de estado;
-  11. Entender e praticar construção de interfaces com **tailwindcss** aplicando responsividade, breakpoints e variações de componentes com **tailwindcss-variants** e **tailwindcss**;
-  12. **Acessibilidade** com **axe-core** e **ChromeVox**;
-  13. **Publicação** com **CI/CD** por meio da plataforma **Netlify**.
+  9. **Animação** na listagem de tarefas com **AutoAnimate**;
+  10. **Componentes acessíveis** com **Radix UI** e integração com **tailwindcss** como ToolTip e Modal;
+  11. **Uso do useReducer** e **Context API** do React para o gerenciamento de estado da aplicação em conjunto com a divisão da lógica de **actions** e **reducers** para o gerenciamento de estado;
+  12. Entender e praticar construção de interfaces com **tailwindcss** aplicando responsividade, breakpoints e variações de componentes com **tailwindcss-variants** e **tailwindcss**;
+  13. **Acessibilidade** com **axe-core** e **ChromeVox**;
+  14. **Publicação** com **CI/CD** por meio da plataforma **Netlify**.
 
 ### O que foi aprendido de novo?
 
