@@ -23,7 +23,7 @@ import {
 } from '../../../dto/transactions'
 import { Button } from '../../Button'
 import { useTransactions } from '../../../hook/useTransactions'
-import { Loading } from '../../Loading'
+// import { Loading } from '../../Loading'
 
 const newTransactionFormValidation = zod.object({
   description: zod.string().min(3, 'É necessário uma descrição válida!'),
@@ -60,7 +60,7 @@ type NewTransactionFormProps = {
 export function NewTransactionForm({
   onCloseModal,
 }: Readonly<NewTransactionFormProps>) {
-  const { handleAddNewTransaction, isAddTransactionLoading } = useTransactions()
+  const { handleAddNewTransaction } = useTransactions()
 
   const {
     register,
@@ -133,14 +133,15 @@ export function NewTransactionForm({
     onCloseModal()
   }
 
-  const submitButtonContent = isAddTransactionLoading ? (
-    <Loading
-      className={`border-white border-top-4-register
-    dark:border-zinc-900 dark:border-top-4-register`}
-    />
-  ) : (
-    'Cadastrar'
-  )
+  // This branch will not use json-server, but localStorage so don't need this
+  // const submitButtonContent = isAddTransactionLoading ? (
+  //   <Loading
+  //     className={`border-white border-top-4-register
+  //   dark:border-zinc-900 dark:border-top-4-register`}
+  //   />
+  // ) : (
+  //   'Cadastrar'
+  // )
 
   return (
     <form
@@ -219,9 +220,9 @@ export function NewTransactionForm({
         type="submit"
         variant="secondary"
         className="w-full"
-        disabled={isAddTransactionLoading}
+        // disabled={isAddTransactionLoading}
       >
-        {submitButtonContent}
+        Cadastrar
       </Button>
     </form>
   )
