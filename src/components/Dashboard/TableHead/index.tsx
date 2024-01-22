@@ -5,7 +5,7 @@ type TableHeadProps = {
   transactionsTotal: number
 }
 
-export function TableHead({ transactionsTotal }: TableHeadProps) {
+export function TableHead({ transactionsTotal }: Readonly<TableHeadProps>) {
   const { isMobile } = useResponsiveness()
 
   if (isMobile) {

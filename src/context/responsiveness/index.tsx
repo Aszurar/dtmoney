@@ -13,7 +13,9 @@ const ResponsivenessContext = createContext({} as ResponsivenessContextProps)
 function ResponsivenessProvider({
   children,
 }: Readonly<ResponsivenessProviderProps>) {
-  const [currentBrowserWidth, setCurrentBrowserWidth] = useState(0)
+  const [currentBrowserWidth, setCurrentBrowserWidth] = useState(
+    window.innerWidth,
+  )
   const isMobile = currentBrowserWidth < 640
 
   function onUpdateCurrentBrowserWidth() {
@@ -25,6 +27,7 @@ function ResponsivenessProvider({
     return () => {
       window.removeEventListener('resize', onUpdateCurrentBrowserWidth)
     }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
