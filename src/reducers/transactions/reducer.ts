@@ -1,6 +1,7 @@
 import { produce } from 'immer'
 import { ActionTypes, IActions } from './actions'
 import { TRANSACTION_TYPE, TransactionsState } from '../../dto/transactions'
+import { isAfter, isBefore } from 'date-fns'
 
 function transactionsReducer(state: TransactionsState, action: IActions) {
   switch (action.type) {
@@ -46,22 +47,39 @@ function transactionsReducer(state: TransactionsState, action: IActions) {
     case ActionTypes.GET_LAST_INCOME_TRANSACTION:
       return produce(state, (draft) => {
         draft.lastIncomeTransaction = draft.transactions.reduce(
-          (accumulator, transaction) =>
-            transaction.type === TRANSACTION_TYPE.income &&
-            transaction.date > accumulator.date
+          (accumulator, transaction) => {
+            const isIncomeTransaction =
+              transaction.type === TRANSACTION_TYPE.income
+
+            const isCurrentTransactionAfterAccumulatorTransaction = isAfter(
+              transaction.date,
+              accumulator.date,
+            )
+            return isIncomeTransaction &&
+              isCurrentTransactionAfterAccumulatorTransaction
               ? transaction
-              : accumulator,
+              : accumulator
+          },
           draft.transactions[0],
         )
       })
+
     case ActionTypes.GET_LAST_OUTCOME_TRANSACTION:
       return produce(state, (draft) => {
         draft.lastOutcomeTransaction = draft.transactions.reduce(
-          (accumulator, transaction) =>
-            transaction.type === TRANSACTION_TYPE.outcome &&
-            transaction.date > accumulator.date
+          (accumulator, transaction) => {
+            const isOutcomeTransaction =
+              transaction.type === TRANSACTION_TYPE.outcome
+
+            const isCurrentTransactionAfterAccumulatorTransaction = isAfter(
+              transaction.date,
+              accumulator.date,
+            )
+            return isOutcomeTransaction &&
+              isCurrentTransactionAfterAccumulatorTransaction
               ? transaction
-              : accumulator,
+              : accumulator
+          },
           draft.transactions[0],
         )
       })
@@ -71,19 +89,23 @@ function transactionsReducer(state: TransactionsState, action: IActions) {
           draft.transactions.length > 0
             ? {
                 initial: draft.transactions.reduce(
-                  (accumulator, transaction) =>
-                    transaction.date < accumulator
+                  (accumulator, transaction) => {
+                    const isCurrentTransactionBeforeAccumulatorTransaction =
+                      isBefore(transaction.date, accumulator)
+                    return isCurrentTransactionBeforeAccumulatorTransaction
                       ? transaction.date
-                      : accumulator,
+                      : accumulator
+                  },
                   draft.transactions[0].date,
                 ),
-                final: draft.transactions.reduce(
-                  (accumulator, transaction) =>
-                    transaction.date > accumulator
-                      ? transaction.date
-                      : accumulator,
-                  draft.transactions[0].date,
-                ),
+                final: draft.transactions.reduce((accumulator, transaction) => {
+                  const isCurrentTransactionAfterAccumulatorTransaction =
+                    isAfter(transaction.date, accumulator)
+
+                  return isCurrentTransactionAfterAccumulatorTransaction
+                    ? transaction.date
+                    : accumulator
+                }, draft.transactions[0].date),
               }
             : undefined
       })

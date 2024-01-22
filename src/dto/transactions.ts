@@ -21,6 +21,11 @@ export type PeriodBalanceProps = {
   final: Date
 }
 
+export type PeriodBalanceFormattedType = {
+  initial: string
+  final: string
+}
+
 export type TransactionsState = {
   transactions: ITransactions[]
   incomeTotal: number

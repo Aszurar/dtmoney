@@ -4,8 +4,8 @@ import {
   FiDollarSign,
 } from 'react-icons/fi'
 import { VariantProps, tv } from 'tailwind-variants'
-import { PeriodBalanceProps } from '../../dto/transactions'
-import { dateFormatter, priceFormatter } from '../../utils/formatter'
+import { priceFormatter } from '../../utils/formatter'
+import { PeriodBalanceFormattedType } from '../../dto/transactions'
 
 const highLightCard = tv({
   slots: {
@@ -41,7 +41,7 @@ const highLightCard = tv({
 type HighLightCardProps = VariantProps<typeof highLightCard> & {
   value: number
   lastDate?: string
-  period?: PeriodBalanceProps
+  period?: PeriodBalanceFormattedType
 }
 
 export function HighLightCard({
@@ -87,18 +87,14 @@ export function HighLightCard({
           {valueFormatted}
         </strong>
         {lastDate && (
-          <>
-            <span
-              className={date()}
-            >{`${title[titleVariant].lastDateInitial}${lastDate}`}</span>
-          </>
+          <span
+            className={date()}
+          >{`${title[titleVariant].lastDateInitial}${lastDate}`}</span>
         )}
         {period && (
           <span
             className={date({ className: 'text-xs font-medium' })}
-          >{`${dateFormatter.format(
-            new Date(period.initial),
-          )} - ${dateFormatter.format(new Date(period.final))}`}</span>
+          >{`${period.initial} - ${period.final}`}</span>
         )}
       </div>
     </div>
