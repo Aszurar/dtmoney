@@ -1,60 +1,52 @@
 {
   "transactions": [
     {
-      "description": "Conta de Gás",
-      "price": 110,
+      "description": "Pizza Gigante de 6 Queijos",
+      "price": 120,
       "type": "outcome",
-      "category": "Contas",
-      "date": "2024-01-16T22:52:12.231Z",
-      "id": "f787441b-f99d-4908-b406-f78b799a0bae"
+      "category": "Alimentação",
+      "date": "2024-01-09T03:00:00.000Z",
+      "id": "3d98d7c5-7309-462b-afcc-7bd5b73dff54"
     },
     {
-      "description": "Trabalho de meio período",
-      "price": 1100,
-      "type": "income",
-      "category": "Trabalho",
-      "date": "2024-01-12T03:00:00.000Z",
-      "id": "8690a721-a8af-46f6-960c-d7b37efea845"
-    },
-    {
-      "description": "Vendas",
-      "price": 2220,
+      "description": "Investimento",
+      "price": 7860,
       "type": "income",
       "category": "Outros",
-      "date": "2023-12-13T03:00:00.000Z",
-      "id": "05c906b0-dec3-436a-b99c-928bf6c61bfc"
+      "date": "2023-12-27T03:00:00.000Z",
+      "id": "2bd92c68-336e-45c8-9074-cf669529237c"
     },
     {
       "description": "Conta de Energia",
       "price": 330,
       "type": "outcome",
-      "category": "Contas",
-      "date": "2023-11-08T03:00:00.000Z",
-      "id": "203259f8-0ef4-425b-8904-1f528c427bff"
+      "category": "Alimentação",
+      "date": "2022-11-17T03:00:00.000Z",
+      "id": "4183b500-d75d-4ccc-b79e-e5fb1921eb0a"
     },
     {
-      "description": "Impost de Importação",
-      "price": 110,
-      "type": "outcome",
-      "category": "Outros",
-      "date": "2023-10-25T03:00:00.000Z",
-      "id": "b2d5362a-af05-4abb-b38f-c6bb0ed996a3"
-    },
-    {
-      "description": "Passeio",
+      "description": "Pizza Gigante de 6 Queijos e Mussarella",
       "price": 220,
       "type": "outcome",
-      "category": "Lazer",
-      "date": "2023-08-30T03:00:00.000Z",
-      "id": "292f8e42-c997-441e-bfab-ef3f920325ef"
+      "category": "Alimentação",
+      "date": "2024-01-22T21:54:30.889Z",
+      "id": "be59c68f-1783-4df1-9632-d846bc4f3a93"
     },
     {
-      "description": "Torta de aniversário",
-      "price": 200,
+      "description": "asdasdasdasdasd sadasdasdsds sdasdsdsdsd sdasdsdsadasds",
+      "price": 330,
       "type": "outcome",
       "category": "Alimentação",
-      "date": "2023-09-23T03:00:00.000Z",
-      "id": "b69b353c-d9d2-4b9a-a551-3a5d17151ccd"
+      "date": "2024-01-22T21:54:30.889Z",
+      "id": "44f86a0f-fe59-40b3-9d89-9a4110b2281e"
+    },
+    {
+      "description": "erdasvcydgvbasuidbashjdbhjasbdhjasbdhjbdhjbdhjbasdhjbhjabhjasbdhjbasdhjbsahjdbhjasdbhjasbdhjasdbhjabshjsb",
+      "price": 332,
+      "type": "outcome",
+      "category": "Alimentação",
+      "date": "2024-01-22T21:54:30.889Z",
+      "id": "113c8007-e7ed-4282-8a71-d3b6585b7768"
     }
   ]
 }
