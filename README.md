@@ -1,7 +1,7 @@
 # #5 - React: **<https://dtmoney-aszurar.netlify.app//>**
 
 <div align="center">
-    <img src="" width="1000">
+    <img src="https://i.imgur.com/HOETMuv.png" width="1000" alt="Banner">
 </div>
 
 ## dtmoney
@@ -63,8 +63,8 @@
 - **Tela inicial**
 
 <div align="center" >
-      <img src="" width="1000">
-      <img src="" width="1000">
+      <img src="https://i.imgur.com/pdtcMxY.png" width="1000" alt="Tela inicial - modo claro">
+      <img src="https://i.imgur.com/fDI8ZP6.png" width="1000" alt="Tela inicial - modo escuro">
 </div>
 
 ---
@@ -109,8 +109,8 @@
 - **Modal de Registro de Transações**
 
   <div align="center" >
-      <img src="https://i.imgur.com/fMEwxCz.png" width="1000" alt="Formulário no tema light"><img src="https://i.imgur.com/SiwGjx4.png" width="1000" alt="Formulário preenchido no tema light">
-      <img src="https://i.imgur.com/F32IPzF.png" width="1000"  alt="Formulário no tema dark"><img src="https://i.imgur.com/XxtVgkC.png" width="1000" alt="Formulário preenchido no tema dark">
+      <img src="https://i.imgur.com/JtZkHWq.png" width="1000" alt="Formulário no tema light"><img src="https://i.imgur.com/VDOy2tI.png" width="1000" alt="Formulário preenchido no tema light">
+      <img src="https://i.imgur.com/tE52ZKr.png" width="1000"  alt="Formulário no tema dark"><img src="https://i.imgur.com/GfWZvlW.png" width="1000" alt="Formulário preenchido no tema dark">
   </div>
 
 ---
