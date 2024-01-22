@@ -172,6 +172,20 @@ export function DatePicker({
     color: ${CSSTheme.daySelected.hover.color};
     font-weight: 600;
   }
+
+  .rdp-button:focus-visible:not([disabled]):not(.rdp-day_selected):focus-visible {
+    background-color: ${CSSTheme.daySelected.hover.backgroundColor};
+    color: ${CSSTheme.daySelected.hover.color};
+    font-weight: 600;
+    border: 0;
+  }
+  .today:focus-visible {
+    background-color: ${CSSTheme.today.hover.borderColor} !important;
+  }
+  .today:focus-visible:hover {
+    color: ${CSSTheme.daySelected.hover.backgroundColor} !important;
+    opacity: 0.8;
+  }
   `
 
   let footer = (

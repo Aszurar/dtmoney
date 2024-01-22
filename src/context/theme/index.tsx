@@ -25,7 +25,7 @@ function ThemeProvider({ children }: Readonly<ThemeProviderProps>) {
   const isTheSystemThemeDarkMode = systemTheme.matches // return true if the system theme is dark mode
   const isTheLocalStorageThemeDarkMode = getTheme() === THEME.dark
   const isDefaultThemeDarkMode =
-    isTheSystemThemeDarkMode || isTheLocalStorageThemeDarkMode
+    isTheSystemThemeDarkMode && isTheLocalStorageThemeDarkMode
 
   const [isDarkMode, setIsDarkMode] = useState(isDefaultThemeDarkMode)
 
