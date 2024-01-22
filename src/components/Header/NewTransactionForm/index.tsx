@@ -50,13 +50,6 @@ type NewTransactionFormProps = {
   onCloseModal: () => void
 }
 
-// TODO
-// Criar Readme
-// Criar branch que usa o localStorage para armazenar as transações e realizar as operações: branch prod
-// json server ficará somente na branch de dev
-// Anotar sobre o uso do .reducer que fiz para calcular o total de entradas e saídas.
-// Anotar toda lógica do useReducer feito aqui
-
 export function NewTransactionForm({
   onCloseModal,
 }: Readonly<NewTransactionFormProps>) {
