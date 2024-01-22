@@ -13,7 +13,7 @@ type TableRowWebProps = {
 export function TableRowMobile({
   transaction,
   handleRemoveTransactionById,
-}: TableRowWebProps) {
+}: Readonly<TableRowWebProps>) {
   return (
     <>
       <div className=" flex items-center justify-between">
@@ -22,6 +22,7 @@ export function TableRowMobile({
           <Button
             variant="ghost"
             // disabled={isLoadingIcon}
+            aria-label="Deletar transação"
             className="h-8 w-8"
             onClick={() => handleRemoveTransactionById(transaction.id)}
           >
