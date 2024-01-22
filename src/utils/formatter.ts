@@ -1,3 +1,6 @@
+import { formatDistance } from 'date-fns'
+import { ptBR } from 'date-fns/locale'
+
 const dateFormatter = new Intl.DateTimeFormat('pt-BR')
 
 const dateFormatterMedium = new Intl.DateTimeFormat('pt-BR', {
@@ -10,4 +13,26 @@ const priceFormatter = new Intl.NumberFormat('pt-BR', {
   style: 'currency',
 })
 
-export { dateFormatter, dateFormatterMedium, priceFormatter }
+type PeriodBetweenDatesProps = {
+  startDate: Date
+  endDate: Date
+}
+
+const periodBetweenDatesFormatted = ({
+  startDate,
+  endDate,
+}: PeriodBetweenDatesProps): string => {
+  const period = formatDistance(startDate, endDate, {
+    addSuffix: true,
+    locale: ptBR,
+  })
+
+  return period
+}
+
+export {
+  dateFormatter,
+  dateFormatterMedium,
+  priceFormatter,
+  periodBetweenDatesFormatted,
+}

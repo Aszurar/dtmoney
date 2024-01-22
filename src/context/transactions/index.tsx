@@ -1,3 +1,4 @@
+import { api } from '../../server/api'
 import React, {
   createContext,
   useCallback,
@@ -6,13 +7,19 @@ import React, {
   useReducer,
   useState,
 } from 'react'
+
+import { transactionsReducer } from '../../reducers/transactions/reducer'
+import {
+  dateFormatter,
+  dateFormatterMedium,
+  periodBetweenDatesFormatted,
+} from '../../utils/formatter'
+
 import {
   ITransactions,
-  PeriodBalanceProps,
+  PeriodBalanceFormattedType,
   TRANSACTIONS_REDUCER_INITIAL_STATE,
 } from '../../dto/transactions'
-import { transactionsReducer } from '../../reducers/transactions/reducer'
-import { api } from '../../server/api'
 import {
   calculateBalance,
   calculateIncomeTotal,
@@ -22,16 +29,11 @@ import {
   getPeriodBalance,
   loadTransactions,
 } from '../../reducers/transactions/actions'
-import { dateFormatterMedium } from '../../utils/formatter'
-import {
-  differenceInDays,
-  differenceInMonths,
-  differenceInYears,
-} from 'date-fns'
+import { isEqual } from 'date-fns'
 
 type PeriodBalanceFormattedProps = {
   period: string
-  dates: PeriodBalanceProps
+  dates: PeriodBalanceFormattedType
 }
 
 type IsDeleteTransactionLoadingProps = {
@@ -86,6 +88,9 @@ function TransactionsProvider({
     periodBalance,
   } = transactionsState
 
+  const [periodBalanceFormatted, setPeriodBalanceFormatted] =
+    useState<PeriodBalanceFormattedProps>({} as PeriodBalanceFormattedProps)
+
   const lastIncomeTransactionDateFormatted = useMemo(() => {
     return lastIncomeTransaction
       ? dateFormatterMedium.format(new Date(lastIncomeTransaction.date))
@@ -98,50 +103,34 @@ function TransactionsProvider({
       : ''
   }, [lastOutcomeTransaction])
 
-  const periodBalanceFormatted = useMemo(() => {
+  function calculatePeriodBalanceFormatted() {
     if (periodBalance) {
       const { initial, final } = periodBalance
       const start = new Date(initial)
       const end = new Date(final)
 
-      const diffInDays = differenceInDays(end, start)
-      const diffInMonths = differenceInMonths(end, start)
-      const diffInYears = differenceInYears(end, start)
+      const isStartDateAndEndDateEquals = isEqual(start, end)
+      const endVerified = isStartDateAndEndDateEquals ? new Date() : end
 
-      let result = ''
+      const initialDateFormatted = dateFormatter.format(start)
+      const finalDateFormatted = dateFormatter.format(endVerified)
 
-      if (diffInYears > 0) {
-        result += `${diffInYears} ano${diffInYears > 1 ? 's' : ''}`
-      }
+      const period = periodBetweenDatesFormatted({
+        startDate: start,
+        endDate: endVerified,
+      })
 
-      if (diffInMonths > 0) {
-        if (result.length > 0) {
-          result += `, `
-        }
-        result += `${diffInMonths} m${diffInMonths > 1 ? 'eses' : 'ês'}`
-      }
-
-      if (diffInDays > 0) {
-        if (result.length > 0) {
-          result += ` e `
-        }
-        result += `${diffInDays} dia${diffInDays > 1 ? 's' : ''}`
-      }
-
-      result = result.length > 0 ? result : '0 dias'
-
-      return {
-        period: result,
+      setPeriodBalanceFormatted({
+        period,
         dates: {
-          initial: start,
-          final: end,
+          initial: initialDateFormatted,
+          final: finalDateFormatted,
         },
-      } as unknown as PeriodBalanceFormattedProps
-      // 1 ano e 2 meses
+      })
+    } else {
+      setPeriodBalanceFormatted({} as PeriodBalanceFormattedProps)
     }
-
-    return undefined
-  }, [periodBalance])
+  }
 
   async function loadTransactionsData() {
     const response = await api.get('/transactions')
@@ -175,6 +164,11 @@ function TransactionsProvider({
     dispatch(getLastOutcomeTransaction())
     dispatch(getPeriodBalance())
   }, [transactions])
+
+  useEffect(() => {
+    calculatePeriodBalanceFormatted()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [periodBalance])
 
   const contextValue = useMemo(
     () => ({
