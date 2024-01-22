@@ -8,6 +8,7 @@ import React, {
   // useState,
 } from 'react'
 // import { api } from '../../server/api'
+import { isEqual } from 'date-fns'
 import { transactionsReducer } from '../../reducers/transactions/reducer'
 import {
   dateFormatter,
@@ -122,9 +123,12 @@ function TransactionsProvider({
       const start = new Date(initial)
       const end = new Date(final)
 
+      const isStartDateAndEndDateEquals = isEqual(start, end)
+      const endVerified = isStartDateAndEndDateEquals ? new Date() : end
+
       const period = periodBetweenDatesFormatted({
         startDate: start,
-        endDate: end,
+        endDate: endVerified,
       })
 
       const initialDateFormatted = dateFormatter.format(start)
@@ -137,6 +141,8 @@ function TransactionsProvider({
           final: finalDateFormatted,
         },
       })
+    } else {
+      setPeriodBalanceFormatted({} as PeriodBalanceFormattedProps)
     }
   }
 
