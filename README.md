@@ -1,5 +1,7 @@
 # #5 - React: **<https://dtmoney-aszurar.netlify.app//>**
 
+- OBS: Essa é a **branch master**, aqui **o projeto usa localStorage para salvar os dados** para facilitar o deploy. Para **a implementação com json-server simulando a api**, acesse a **branch de desenvolvimento(dev)**.
+
 <div align="center">
     <img src="https://i.imgur.com/HOETMuv.png" width="1000" alt="Banner">
 </div>
@@ -17,7 +19,7 @@
 
 <div align="center">
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/3b9ff421-260b-4411-966e-183baa6e739d/deploy-status)](https://app.netlify.com/sites/todo-aszurar/deploys) [![React](https://img.shields.io/badge/-React-%2320232a.svg?style=flat&logo=react&link=https://react.dev)](https://react.dev/)[![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat&logo=tailwind-css&logoColor=white&link=https://tailwindcss.com/)](https://tailwindcss.com/) [![TypeScript](https://img.shields.io/badge/-TypeScript-%23007ACC?style=?style=flat-square&logo=typescript&logoColor=white&link=https://www.typescriptlang.org/)](https://www.typescriptlang.org/) [![JavaScript](https://img.shields.io/badge/-JavaScript-%23323330.svg?style=flat&logo=javascript&link=https://www.javascript.com/)](https://www.javascript.com/) [![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat&logo=html5&logoColor=white&link=https://developer.mozilla.org/pt-BR/docs/Web/HTML)](https://developer.mozilla.org/pt-BR/docs/Web/HTML) [![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat&logo=css3&link=https://www.w3schools.com/css/)](https://www.w3schools.com/css/) [![Yarn](https://img.shields.io/badge/-yarn-%232C8EBB?style=flat&logo=yarn&logoColor=white&link=https://yarnpkg.com/)](https://yarnpkg.com/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7d45adec-d8f8-499a-b2da-24950dd971b0/deploy-status)](https://app.netlify.com/sites/dtmoney-aszurar/deploys) [![React](https://img.shields.io/badge/-React-%2320232a.svg?style=flat&logo=react&link=https://react.dev)](https://react.dev/)[![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat&logo=tailwind-css&logoColor=white&link=https://tailwindcss.com/)](https://tailwindcss.com/) [![TypeScript](https://img.shields.io/badge/-TypeScript-%23007ACC?style=?style=flat-square&logo=typescript&logoColor=white&link=https://www.typescriptlang.org/)](https://www.typescriptlang.org/) [![JavaScript](https://img.shields.io/badge/-JavaScript-%23323330.svg?style=flat&logo=javascript&link=https://www.javascript.com/)](https://www.javascript.com/) [![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat&logo=html5&logoColor=white&link=https://developer.mozilla.org/pt-BR/docs/Web/HTML)](https://developer.mozilla.org/pt-BR/docs/Web/HTML) [![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat&logo=css3&link=https://www.w3schools.com/css/)](https://www.w3schools.com/css/) [![Yarn](https://img.shields.io/badge/-yarn-%232C8EBB?style=flat&logo=yarn&logoColor=white&link=https://yarnpkg.com/)](https://yarnpkg.com/)
 
 </div>
 
@@ -37,19 +39,18 @@
 ---
 
 <div align="center">
-    <img src="" width="1000">
+    <img src="https://i.imgur.com/6nO8HMN.gif" width="700" alt="Gif mostrando o projeto">
 </div>
 
 <div align="center" >
 
-**[Link do vídeo completo sobre o projeto](https://www.youtube.com/watch?v=JYvJrERvdV4)**
+**[Link do vídeo completo sobre o projeto](https://www.youtube.com/watch?v=Cgs2s0G4NWA)**
 
 </div>
 
 ---
 
 ## :information_source: Sobre
-
 - O projeto **dtomeny** pode ser um projeto simples, mas que foi abordado conceitos importantes para o desenvolvimento de web apps com React.
 - Esse projeto foi reformulado e refeito com tecnologias atuais a partir de um projeto do módulo da trilha de 2021 de React da Rocketseat. Assim, temos algumas adições e incrementos como o uso do json-server para simular uma API, a criação do **tema escuro**, Remoção de transações, gerenciamento de Estados pelo useReducer,  dentre outros.
 - Usamos **[React](https://react.dev)** com **[TypeScript](https://www.typescriptlang.org/)** como principais tecnologias.
@@ -156,20 +157,28 @@
   5. **[CurrencyFormat](https://github.com/mohitgupta8888/react-currency-format)**
   6. **[Date FNS](https://date-fns.org/)**
   7. **[DayPicker](https://react-day-picker.js.org/)**
-  8. **[JavaScript](https://developer.mozilla.org/pt1.BR/docs/Web/JavaScript)**
-  9. **[JSON Server](https://github.com/typicode/json-server)**
-  10. **[Feather Icons](https://feathericons.com/)**
-  11. **[Netlify](https://www.netlify.com/)**
-  12. **[NodeJS](https://nodejs.org/en/)**
-  13. **[Radix UI](https://www.radix-ui.com/)**
-  14. **[React](https://pt1.br.react.dev/)**
-  15. **[Sentry](https://sentry.io/welcome/)**
-  16. **[TailwindCSS](https://tailwindcss.com/)**
-  17. **[TailwindCSS Variants](https://www.tailwind-variants.org/)**
-  18. **[TypeScript](https://www.typescriptlang.org/)**
-  19. **[Vite](https://vitejs.dev/)**
-  20. **[Yarn](https://classic.yarnpkg.com/blog/2017/05/12/introducing-yarn/)**
+  8. **[Feather Icons](https://feathericons.com/)**
+  9. **[Framer Motion](https://www.framer.com/motion/)**
+  10. **[JavaScript](https://developer.mozilla.org/pt1.BR/docs/Web/JavaScript)**
+  11. **[JSON Server](https://github.com/typicode/json-server)**
+  12. **[Netlify](https://www.netlify.com/)**
+  13. **[NodeJS](https://nodejs.org/en/)**
+  14. **[Radix UI](https://www.radix-ui.com/)**
+  15. **[React](https://pt1.br.react.dev/)**
+  16. **[React Hook Form](https://react-hook-form.com/)**
+  17. **[TailwindCSS](https://tailwindcss.com/)**
+  18. **[TailwindCSS Variants](https://www.tailwind-variants.org/)**
+  19. **[TypeScript](https://www.typescriptlang.org/)**
+  20. **[Vite](https://vitejs.dev/)**
+  21. **[Yarn](https://classic.yarnpkg.com/blog/2017/05/12/introducing-yarn/)**
+  22. **[zod](https://zod.dev/?id=installation)**
 
+- **Day Picker**
+
+<div align="center" >
+      <img src="https://i.imgur.com/DiNlElf.png" alt="Seletor de datas - modo claro" width="1000">
+      <img src="https://i.imgur.com/gAXJlpN.png" alt="Seletor de datas - modo escuro" width="1000">
+</div>
 ---
 
 ## :truck: Entrega e distribuição continua
@@ -181,7 +190,7 @@
 - Além disso, podemos customizar o próprio endereço do site, adicionar ferramentas dentre outras funcionalidades facilmente.
 
 <div align="center">
-   <img src="https://i.imgur.com/95151dy.png" width="1000" alt="design do projeto">
+   <img src="https://i.imgur.com/O5F1MjB.png" width="1000" alt="design do projeto">
 </div>
 
 ---
