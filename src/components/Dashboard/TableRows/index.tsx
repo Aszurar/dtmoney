@@ -16,8 +16,14 @@ export function TableRows() {
   const { isMobile } = useResponsiveness()
 
   const { transactions, handleRemoveTransactionById } = useTransactions()
+  const transactionsSortedByDate = [...transactions].sort((a, b) => {
+    const dateA = new Date(a.date)
+    const dateB = new Date(b.date)
 
-  return transactions.map((transaction) => {
+    return dateA.getTime() - dateB.getTime()
+  })
+
+  return transactionsSortedByDate.map((transaction) => {
     const dataFormatted = dateFormatter.format(new Date(transaction.date))
     const priceFormatted = priceFormatter.format(transaction.price)
     const priceFormattedWithSignalOrNot =
