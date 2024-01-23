@@ -51,7 +51,8 @@
 ---
 
 ## :information_source: Sobre
-- O projeto **dtomeny** pode ser um projeto simples, mas que foi abordado conceitos importantes para o desenvolvimento de web apps com React.
+
+- O projeto **dtmoney** pode ser um projeto simples, mas que foi abordado conceitos importantes para o desenvolvimento de web apps com React.
 - Esse projeto foi reformulado e refeito com tecnologias atuais a partir de um projeto do módulo da trilha de 2021 de React da Rocketseat. Assim, temos algumas adições e incrementos como o uso do json-server para simular uma API, a criação do **tema escuro**, Remoção de transações, gerenciamento de Estados pelo useReducer,  dentre outros.
 - Usamos **[React](https://react.dev)** com **[TypeScript](https://www.typescriptlang.org/)** como principais tecnologias.
 - A animação da listagem é feita com a lib **[AutoAnimate](https://auto-animate.formkit.com/)**.
@@ -185,6 +186,8 @@
 
 **<https://dtmoney-aszurar.netlify.app//>**
 
+- OBS: A publicação do projeto foi feito a partir dessa branch(master), em que usamos o localStorage como armazenamento de dados justamente para facilitar a publicação. Pois a ideia é o uso do json-server para simular uma api, e isso é feito na branch dev.
+  
 - Para a publicação da aplicação foi por meio da plataforma **[Netlify](https://www.netlify.com/)** onde é possível publicar de forma rápida, fácil e simples projetos React que estão hospedados no GitHub, GitLab, dentre outras plataformas de repositório remoto de graça.
 - Com isso, o CI/CD já é aplicado automaticamente por meio dessa plataforma definindo a branch de produção, sempre que houver uma atualização nela, será gerado uma nova versão do projeto e já publicado.
 - Além disso, podemos customizar o próprio endereço do site, adicionar ferramentas dentre outras funcionalidades facilmente.
