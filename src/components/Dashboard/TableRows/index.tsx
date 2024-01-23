@@ -1,10 +1,10 @@
 import * as Table from '../../Table'
+import { TableRowWebMemoized } from './TableRowWeb'
+import { TableRowMobileMemoized } from './TableRowMobile'
+import { ITransactions } from '../../../dto/transactions'
 import { useTransactions } from '../../../hook/useTransactions'
 import { useResponsiveness } from '../../../hook/useResponsiveness'
 import { dateFormatter, priceFormatter } from '../../../utils/formatter'
-import { TableRowMobileMemoized } from './TableRowMobile'
-import { TableRowWebMemoized } from './TableRowWeb'
-import { ITransactions } from '../../../dto/transactions'
 
 export type TransactionProps = Omit<ITransactions, 'date' | 'price'> & {
   date: string
@@ -20,7 +20,14 @@ export function TableRows() {
     isDeleteTransactionLoading,
   } = useTransactions()
 
-  return transactions.map((transaction) => {
+  const transactionsSortedByDate = [...transactions].sort((a, b) => {
+    const dateA = new Date(a.date)
+    const dateB = new Date(b.date)
+
+    return dateA.getTime() - dateB.getTime()
+  })
+
+  return transactionsSortedByDate.map((transaction) => {
     const dataFormatted = dateFormatter.format(new Date(transaction.date))
     const priceFormatted = priceFormatter.format(transaction.price)
     const priceFormattedWithSignalOrNot =

@@ -1,52 +1,52 @@
 {
   "transactions": [
     {
-      "description": "Pizza Gigante de 6 Queijos",
-      "price": 120,
-      "type": "outcome",
-      "category": "Alimentação",
-      "date": "2024-01-09T03:00:00.000Z",
-      "id": "3d98d7c5-7309-462b-afcc-7bd5b73dff54"
-    },
-    {
-      "description": "Investimento",
-      "price": 7860,
-      "type": "income",
-      "category": "Outros",
-      "date": "2023-12-27T03:00:00.000Z",
-      "id": "2bd92c68-336e-45c8-9074-cf669529237c"
-    },
-    {
       "description": "Conta de Energia",
       "price": 330,
       "type": "outcome",
-      "category": "Alimentação",
-      "date": "2022-11-17T03:00:00.000Z",
-      "id": "4183b500-d75d-4ccc-b79e-e5fb1921eb0a"
+      "category": "Contas",
+      "date": "2024-01-10T03:00:00.000Z",
+      "id": "5e777057-74f2-4e95-a309-a2428609ae84"
     },
     {
-      "description": "Pizza Gigante de 6 Queijos e Mussarella",
-      "price": 220,
-      "type": "outcome",
-      "category": "Alimentação",
-      "date": "2024-01-22T21:54:30.889Z",
-      "id": "be59c68f-1783-4df1-9632-d846bc4f3a93"
-    },
-    {
-      "description": "asdasdasdasdasd sadasdasdsds sdasdsdsdsd sdasdsdsadasds",
+      "description": "Vendas",
       "price": 330,
-      "type": "outcome",
-      "category": "Alimentação",
-      "date": "2024-01-22T21:54:30.889Z",
-      "id": "44f86a0f-fe59-40b3-9d89-9a4110b2281e"
+      "type": "income",
+      "category": "Outros",
+      "date": "2023-11-01T03:00:00.000Z",
+      "id": "cbc7f1d7-01a6-4bc2-9d84-b74b7e37900e"
     },
     {
-      "description": "erdasvcydgvbasuidbashjdbhjasbdhjasbdhjbdhjbdhjbasdhjbhjabhjasbdhjbasdhjbsahjdbhjasdbhjasbdhjasdbhjabshjsb",
-      "price": 332,
+      "description": "Conta de Gás",
+      "price": 110,
+      "type": "outcome",
+      "category": "Contas",
+      "date": "2024-01-09T03:00:00.000Z",
+      "id": "9ede2e65-643f-4293-b8e9-f0371547fac5"
+    },
+    {
+      "description": "Investimento",
+      "price": 100,
+      "type": "income",
+      "category": "Outros",
+      "date": "2023-12-30T03:00:00.000Z",
+      "id": "ded17a96-9dca-41b6-9abe-72c66111f55d"
+    },
+    {
+      "description": "Navegação pelo teclado",
+      "price": 200,
       "type": "outcome",
       "category": "Alimentação",
-      "date": "2024-01-22T21:54:30.889Z",
-      "id": "113c8007-e7ed-4282-8a71-d3b6585b7768"
+      "date": "2022-08-20T03:00:00.000Z",
+      "id": "3922dfe6-e5f1-4d71-9ca9-60239e12c09b"
+    },
+    {
+      "description": "Navegação pelo teclado",
+      "price": 1000,
+      "type": "outcome",
+      "category": "Contas",
+      "date": "2023-12-20T03:00:00.000Z",
+      "id": "e8f7f991-3c44-4d5a-a72f-47bdbcf8f3f0"
     }
   ]
 }
