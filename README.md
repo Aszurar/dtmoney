@@ -58,7 +58,7 @@
 - A animação da listagem é feita com a lib **[AutoAnimate](https://auto-animate.formkit.com/)**.
 - A acessibilidade foi levada em consideração, com o uso da lib **[axe-core](https://www.npmjs.com/package/@axe-core/react)** para testes e correções de acessibilidade assim como leitor de tela ChromeVox e o uso do **[Radix UI](https://www.radix-ui.com/)** para componentes acessíveis como Modais e Tooltips.
 
-- O projeto dtmoney é o 2º projeto realizado em aula do bootcamp Ignite da trilha ReactJS da Rocketseat.
+- O projeto dtmoney é o 2º projeto realizado em aula do bootcamp Ignite da trilha ReactJS de 2021 da [Rocketseat](https://www.rocketseat.com.br/)
   - Esse projeto na época construído, foi feito com create react app e Styled Componentes.
   - Agora foi refeito com Vite e TailwindCSS.
   
